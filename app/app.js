@@ -78,7 +78,7 @@ const render = (messages) => {
         />
       </LanguageProvider>
     </Provider>,
-    document.getElementById('app')
+    document.getElementById('app'),
   );
 };
 

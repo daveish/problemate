@@ -2,9 +2,9 @@
  * Test async injectors
  */
 
+import { fromJS } from 'immutable';
 import { memoryHistory } from 'react-router';
 import { put } from 'redux-saga/effects';
-import { fromJS } from 'immutable';
 import configureStore from '../../store';
 
 import {

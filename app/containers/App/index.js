@@ -11,6 +11,7 @@
  * the linting exception.
  */
 
+import { MuiThemeProvider } from 'material-ui';
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import AppBar from '../../components/AppBar/index';
@@ -28,12 +29,14 @@ const AppWrapper = styled.div`
 class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <ThemeProvider theme={theme}>
-        <AppWrapper>
-          {React.Children.toArray(this.props.children)}
-          <AppBar />
-        </AppWrapper>
-      </ThemeProvider>
+      <MuiThemeProvider>
+        <ThemeProvider theme={theme}>
+          <AppWrapper>
+            {React.Children.toArray(this.props.children)}
+            <AppBar />
+          </AppWrapper>
+        </ThemeProvider>
+      </MuiThemeProvider>
     );
   }
 }

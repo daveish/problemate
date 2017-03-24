@@ -1,13 +1,13 @@
-import React from 'react';
 import { mount, shallow } from 'enzyme';
+import React from 'react';
 import { defineMessages, FormattedMessage } from 'react-intl';
 import { Provider } from 'react-redux';
 import { browserHistory } from 'react-router';
 
-import ConnectedLanguageProvider, { LanguageProvider } from '../index';
+import { translationMessages } from '../../../i18n';
 import configureStore from '../../../store';
 
-import { translationMessages } from '../../../i18n';
+import ConnectedLanguageProvider, { LanguageProvider } from '../index';
 
 const messages = defineMessages({
   someMessage: {
@@ -23,7 +23,7 @@ describe('<LanguageProvider />', () => {
     const renderedComponent = shallow(
       <LanguageProvider messages={messages} locale="en">
         {children}
-      </LanguageProvider>
+      </LanguageProvider>,
     );
     expect(renderedComponent.contains(children)).toBe(true);
   });
@@ -42,10 +42,10 @@ describe('<ConnectedLanguageProvider />', () => {
         <ConnectedLanguageProvider messages={translationMessages}>
           <FormattedMessage {...messages.someMessage} />
         </ConnectedLanguageProvider>
-      </Provider>
+      </Provider>,
     );
     expect(renderedComponent
-      .contains(<FormattedMessage {...messages.someMessage} />)
+      .contains(<FormattedMessage {...messages.someMessage} />),
     )
       .toBe(true);
   });
