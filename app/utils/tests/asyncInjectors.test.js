@@ -9,9 +9,9 @@ import { fromJS } from 'immutable';
 import configureStore from 'store';
 
 import {
+  getAsyncInjectors,
   injectAsyncReducer,
   injectAsyncSagas,
-  getAsyncInjectors,
 } from '../asyncInjectors';
 
 // Fixtures
@@ -76,22 +76,24 @@ describe('asyncInjectors', () => {
     });
 
     describe('injectAsyncReducer', () => {
-      it('given a store, it should provide a function to inject a reducer', () => {
-        const injectReducer = injectAsyncReducer(store);
+      it('given a store, it should provide a function to inject a reducer',
+        () => {
+          const injectReducer = injectAsyncReducer(store);
 
-        injectReducer('test', reducer);
+          injectReducer('test', reducer);
 
-        const actual = store.getState().get('test');
-        const expected = initialState;
+          const actual = store.getState().get('test');
+          const expected = initialState;
 
-        expect(actual.toJS()).toEqual(expected.toJS());
-      });
+          expect(actual.toJS()).toEqual(expected.toJS());
+        });
 
       it('should not assign reducer if already existing', () => {
         const injectReducer = injectAsyncReducer(store);
 
         injectReducer('test', reducer);
-        injectReducer('test', () => {});
+        injectReducer('test', () => {
+        });
 
         expect(store.asyncReducers.test.toString()).toEqual(reducer.toString());
       });

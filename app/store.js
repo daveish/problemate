@@ -2,7 +2,7 @@
  * Create the store with asynchronously loaded reducers
  */
 
-import { createStore, applyMiddleware, compose } from 'redux';
+import { applyMiddleware, compose, createStore } from 'redux';
 import { fromJS } from 'immutable';
 import { routerMiddleware } from 'react-router-redux';
 import createSagaMiddleware from 'redux-saga';
@@ -28,8 +28,8 @@ export default function configureStore(initialState = {}, history) {
   const composeEnhancers =
     process.env.NODE_ENV !== 'production' &&
     typeof window === 'object' &&
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
-      window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : compose;
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+      ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : compose;
   /* eslint-enable */
 
   const store = createStore(

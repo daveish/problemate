@@ -1,6 +1,6 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-import { FormattedMessage, defineMessages } from 'react-intl';
+import { mount, shallow } from 'enzyme';
+import { defineMessages, FormattedMessage } from 'react-intl';
 import { Provider } from 'react-redux';
 import { browserHistory } from 'react-router';
 
@@ -44,6 +44,9 @@ describe('<ConnectedLanguageProvider />', () => {
         </ConnectedLanguageProvider>
       </Provider>
     );
-    expect(renderedComponent.contains(<FormattedMessage {...messages.someMessage} />)).toBe(true);
+    expect(renderedComponent
+      .contains(<FormattedMessage {...messages.someMessage} />)
+    )
+      .toBe(true);
   });
 });

@@ -30,14 +30,18 @@ export function checkStore(store) {
  */
 export function injectAsyncReducer(store, isValid) {
   return function injectReducer(name, asyncReducer) {
-    if (!isValid) checkStore(store);
+    if (!isValid) {
+      checkStore(store);
+    }
 
     invariant(
       isString(name) && !isEmpty(name) && isFunction(asyncReducer),
       '(app/utils...) injectAsyncReducer: Expected `asyncReducer` to be a reducer function'
     );
 
-    if (Reflect.has(store.asyncReducers, name)) return;
+    if (Reflect.has(store.asyncReducers, name)) {
+      return;
+    }
 
     store.asyncReducers[name] = asyncReducer; // eslint-disable-line no-param-reassign
     store.replaceReducer(createReducer(store.asyncReducers));
@@ -49,7 +53,9 @@ export function injectAsyncReducer(store, isValid) {
  */
 export function injectAsyncSagas(store, isValid) {
   return function injectSagas(sagas) {
-    if (!isValid) checkStore(store);
+    if (!isValid) {
+      checkStore(store);
+    }
 
     invariant(
       Array.isArray(sagas),
