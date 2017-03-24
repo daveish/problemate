@@ -26,6 +26,8 @@ import { makeSelectLocationState } from 'containers/App/selectors';
 // Import Language Provider
 import LanguageProvider from 'containers/LanguageProvider';
 
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
 // Load the favicon and the manifest.json file
 /* eslint-disable import/no-unresolved, import/extensions */
 import '!file-loader?name=[name].[ext]!./favicon.ico';
@@ -62,6 +64,8 @@ const rootRoute = {
   component: App,
   childRoutes: createRoutes(store),
 };
+
+injectTapEventPlugin();
 
 const render = (messages) => {
   ReactDOM.render(
