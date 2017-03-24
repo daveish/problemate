@@ -39,7 +39,7 @@ class App extends React.PureComponent { // eslint-disable-line react/prefer-stat
 }
 
 App.propTypes = {
-  children: React.PropTypes.node,
+  children: React.PropTypes.node.isRequired,
 };
 
 export default App;
