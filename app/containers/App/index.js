@@ -1,6 +1,6 @@
 /**
  *
- * App.react.js
+ * App
  *
  * This component is the skeleton around the actual pages, and should only
  * contain code that should be seen on all pages. (e.g. navigation bar)
@@ -12,18 +12,34 @@
  */
 
 import React from 'react';
+import styled, { ThemeProvider } from 'styled-components';
+import AppBar from '../../components/AppBar/index';
+import theme from '../../styles/theme';
 
-export default class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+const AppWrapper = styled.div`
+  max-width: calc(768px + 16px * 2);
+  margin: 0 auto;
+  display: flex;
+  min-height: 100%;
+  padding: 0 16px;
+  flex-direction: column;
+`;
 
-  static propTypes = {
-    children: React.PropTypes.node,
-  };
-
+class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <div>
-        {React.Children.toArray(this.props.children)}
-      </div>
+      <ThemeProvider theme={theme}>
+        <AppWrapper>
+          {React.Children.toArray(this.props.children)}
+          <AppBar />
+        </AppWrapper>
+      </ThemeProvider>
     );
   }
 }
+
+App.propTypes = {
+  children: React.PropTypes.node,
+};
+
+export default App;
