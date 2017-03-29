@@ -5,7 +5,9 @@
  */
 
 import React from 'react';
+import { FaBars, FaHeart, FaHome, FaSearch } from 'react-icons/lib/fa/index';
 import styled from 'styled-components';
+import AppBarButton from '../AppBarButton/index';
 
 const AppBarWrapper = styled.div`
   background-color: #bbb;
@@ -30,28 +32,26 @@ const AppBarIconRightContainer = styled.div`
   margin-right: -1rem;
 `;
 
-const IconPlaceholder = styled.div`
-  background-color: green;
-  height: 3.5rem;
-  width: 3.5rem;
-  padding: 1rem;
-  border: 1px solid black;
-  display: inline-block;
-`;
-
 class AppBar extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
       <AppBarWrapper>
         <AppBarIconLeftContainer>
-          <IconPlaceholder />
+          <AppBarButton>
+            <FaHome size="auto" />
+          </AppBarButton>
         </AppBarIconLeftContainer>
 
         <AppBarIconRightContainer>
-          <IconPlaceholder />
-          <IconPlaceholder />
-          <IconPlaceholder />
-          <IconPlaceholder />
+          <AppBarButton>
+            <FaSearch size="auto" />
+          </AppBarButton>
+          <AppBarButton>
+            <FaHeart size="auto" />
+          </AppBarButton>
+          <AppBarButton>
+            <FaBars size="auto" />
+          </AppBarButton>
         </AppBarIconRightContainer>
       </AppBarWrapper>
     );
