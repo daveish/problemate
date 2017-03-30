@@ -38,19 +38,19 @@ class AppBar extends React.Component { // eslint-disable-line react/prefer-state
       <AppBarWrapper>
         <AppBarIconLeftContainer>
           <AppBarButton>
-            <FaHome size="auto" />
+            <FaHome size="100%" />
           </AppBarButton>
         </AppBarIconLeftContainer>
 
         <AppBarIconRightContainer>
           <AppBarButton>
-            <FaSearch size="auto" />
+            <FaSearch size="100%" />
           </AppBarButton>
           <AppBarButton>
-            <FaHeart size="auto" />
+            <FaHeart size="100%" />
           </AppBarButton>
           <AppBarButton>
-            <FaBars size="auto" />
+            <FaBars size="100%" />
           </AppBarButton>
         </AppBarIconRightContainer>
       </AppBarWrapper>
