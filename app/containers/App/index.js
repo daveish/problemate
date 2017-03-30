@@ -14,15 +14,15 @@
 import { MuiThemeProvider } from 'material-ui';
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import AppBar from '../../components/AppBar/index';
 import theme from '../../styles/theme';
+import { AppNavigation } from '../AppNavigation/index';
 
 const AppWrapper = styled.div`
-  max-width: calc(768px + 16px * 2);
-  margin: 0 auto;
   display: flex;
-  min-height: 100%;
   flex-direction: column;
+  margin: 0 auto;
+  max-width: calc(1024px);
+  min-height: 100%;
 `;
 
 class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -32,7 +32,7 @@ class App extends React.PureComponent { // eslint-disable-line react/prefer-stat
         <ThemeProvider theme={theme}>
           <AppWrapper>
             {React.Children.toArray(this.props.children)}
-            <AppBar />
+            <AppNavigation dispatch={() => {}} />
           </AppWrapper>
         </ThemeProvider>
       </MuiThemeProvider>
