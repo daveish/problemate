@@ -47,7 +47,7 @@ class AppBar extends React.Component { // eslint-disable-line react/prefer-state
             <FaSearch size="100%" />
           </AppBarButton>
           <AppBarButton>
-            <FaHeart size="100%" />
+            <FaHeart size="100%" color="#de1337" />
           </AppBarButton>
           <AppBarButton>
             <FaBars size="100%" />
