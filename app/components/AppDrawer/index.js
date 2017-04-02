@@ -13,7 +13,7 @@ import React from 'react';
 class AppDrawer extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <Drawer>
+      <Drawer openSecondary>
         {React.Children.toArray(this.props.children)}
       </Drawer>
     );

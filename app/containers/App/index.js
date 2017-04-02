@@ -11,11 +11,12 @@
  * the linting exception.
  */
 
-import { MuiThemeProvider } from 'material-ui';
+import { MenuItem, MuiThemeProvider } from 'material-ui';
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
+import AppBar from '../../components/AppBar/index';
+import AppDrawer from '../../components/AppDrawer/index';
 import theme from '../../styles/theme';
-import { AppNavigation } from '../AppNavigation/index';
 
 const AppWrapper = styled.div`
   display: flex;
@@ -32,7 +33,12 @@ class App extends React.PureComponent { // eslint-disable-line react/prefer-stat
         <ThemeProvider theme={theme}>
           <AppWrapper>
             {React.Children.toArray(this.props.children)}
-            <AppNavigation dispatch={() => {}} />
+            <AppBar />
+            <AppDrawer>
+              <MenuItem>
+                Menu Item
+              </MenuItem>
+            </AppDrawer>
           </AppWrapper>
         </ThemeProvider>
       </MuiThemeProvider>
