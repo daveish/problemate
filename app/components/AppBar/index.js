@@ -8,6 +8,7 @@ import { Paper } from 'material-ui';
 import React from 'react';
 import { FaBars, FaHeart, FaHome, FaSearch } from 'react-icons/lib/fa/index';
 import styled from 'styled-components';
+import theme from '../../styles/theme';
 import AppBarButton from '../AppBarButton/index';
 
 const AppBarWrapper = styled(Paper)`
@@ -44,23 +45,26 @@ class AppBar extends React.Component { // eslint-disable-line react/prefer-state
         <StyledNav>
           <AppBarIconLeftContainer>
             <AppBarButton
-              icon={<FaHome size="100%" alt="Zur Startseite" />}
+              icon={
+                <FaHome size="100%" color={theme.button} alt="Go to homepage" />
+              }
               href="#"
             />
           </AppBarIconLeftContainer>
 
           <AppBarIconRightContainer>
             <AppBarButton
-              icon={<FaSearch size="100%" alt="Suchen" />}
+              icon={<FaSearch size="100%" color={theme.button} alt="Search" />}
               href="#"
             />
             <AppBarButton
-              icon={<FaHeart size="100%" color="#de1337" />}
+              icon={
+                <FaHeart size="100%" color={theme.filledHeart} alt="Favorize" />
+              }
               href="#"
-              alt="Favorisieren"
             />
             <AppBarButton
-              icon={<FaBars size="100%" alt="Navigieren" />}
+              icon={<FaBars size="100%" color={theme.button} alt="Navigate" />}
               href="#"
             />
           </AppBarIconRightContainer>

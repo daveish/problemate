@@ -6,20 +6,20 @@
 
 import React from 'react';
 import styled from 'styled-components';
+import { IconButton } from 'material-ui';
 
-const A = styled.a`
-  display: inline-block;
-  height: 3.5rem;
-  padding: 1rem;
-  width: 3.5rem;
+const StyledIconButton = styled(IconButton)`
+  height: 3.5rem !important;
+  padding: 1rem !important;
+  width: 3.5rem !important;
 `;
 
 class AppBarButton extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <A href={this.props.href} onClick={this.props.onClick}>
+      <StyledIconButton href={this.props.href} onTouchTap={this.props.onClick}>
         {this.props.icon}
-      </A>
+      </StyledIconButton>
     );
   }
 }
