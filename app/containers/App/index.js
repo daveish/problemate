@@ -19,10 +19,10 @@ import AppDrawer from '../../components/AppDrawer/index';
 import theme from '../../styles/theme';
 
 const AppWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  max-width: calc(1024px);
+  height: 100%;
+`;
+
+const StyledMain = styled.main`
   min-height: 100%;
 `;
 
@@ -32,6 +32,9 @@ class App extends React.PureComponent { // eslint-disable-line react/prefer-stat
       <MuiThemeProvider>
         <ThemeProvider theme={theme}>
           <AppWrapper>
+            <StyledMain>
+              Hi
+            </StyledMain>
             <AppBar />
             <AppDrawer />
             {React.Children.toArray(this.props.children)}
