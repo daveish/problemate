@@ -13,9 +13,6 @@ import AppBarButton from '../AppBarButton/index';
 
 const AppBarWrapper = styled(Paper)`
   bottom: 0;
-  display: flex;
-  height: 3.5rem;
-  left: 0;
   position: fixed;
   width: 100%;
   z-index: 1100;
@@ -23,19 +20,12 @@ const AppBarWrapper = styled(Paper)`
 
 const StyledNav = styled.nav`
   display: flex;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  width: 100%;
 `;
 
-const AppBarIconLeftContainer = styled.div`
-  margin-left: -1rem;
-  margin-right: auto;
-`;
+const AppBarIconLeftContainer = styled.div``;
 
 const AppBarIconRightContainer = styled.div`
   margin-left: auto;
-  margin-right: -1rem;
 `;
 
 class AppBar extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -59,7 +49,7 @@ class AppBar extends React.Component { // eslint-disable-line react/prefer-state
             />
             <AppBarButton
               icon={
-                <FaHeart size="100%" color={theme.filledHeart} alt="Favorize" />
+                <FaHeart size="100%" color={theme.button} alt="Favorize" />
               }
               href="#"
             />

@@ -24,6 +24,7 @@ const AppWrapper = styled.div`
 
 const StyledMain = styled.main`
   min-height: 100%;
+  padding-bottom: 3.5rem;
 `;
 
 class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
