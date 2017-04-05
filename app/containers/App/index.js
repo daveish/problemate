@@ -34,7 +34,7 @@ class App extends React.PureComponent { // eslint-disable-line react/prefer-stat
         <ThemeProvider theme={theme}>
           <AppWrapper>
             <StyledMain>
-              Hi
+              {null}
             </StyledMain>
             <AppBar />
             <AppDrawer />
