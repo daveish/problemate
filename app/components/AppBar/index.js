@@ -44,12 +44,22 @@ class AppBar extends React.Component { // eslint-disable-line react/prefer-state
 
           <AppBarIconRightContainer>
             <AppBarButton
-              icon={<FaSearch size="100%" color={theme.searchIconColor} alt="Search" />}
+              icon={
+                <FaSearch
+                  size="100%"
+                  color={theme.searchIconColor}
+                  alt="Search"
+                />
+              }
               href="#"
             />
             <AppBarButton
               icon={
-                <FaHeart size="100%" color={theme.heartIconColor} alt="Favorize" />
+                <FaHeart
+                  size="100%"
+                  color={theme.heartIconColor}
+                  alt="Favorize"
+                />
               }
               href="#"
             />

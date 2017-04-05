@@ -33,12 +33,11 @@ class App extends React.PureComponent { // eslint-disable-line react/prefer-stat
       <MuiThemeProvider>
         <ThemeProvider theme={theme}>
           <AppWrapper>
-            <StyledMain>
-              {null}
-            </StyledMain>
             <AppBar />
             <AppDrawer />
-            {React.Children.toArray(this.props.children)}
+            <StyledMain>
+              {React.Children.toArray(this.props.children)}
+            </StyledMain>
           </AppWrapper>
         </ThemeProvider>
       </MuiThemeProvider>
