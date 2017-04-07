@@ -5,14 +5,7 @@
  */
 
 import React from 'react';
-import styled from 'styled-components';
-import { IconButton } from 'material-ui';
-
-const StyledIconButton = styled(IconButton)`
-  height: 3.5rem !important;
-  padding: 1rem !important;
-  width: 3.5rem !important;
-`;
+import StyledIconButton from '../StyledIconButton/index';
 
 class AppBarButton extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
@@ -25,14 +18,13 @@ class AppBarButton extends React.Component { // eslint-disable-line react/prefer
 }
 
 AppBarButton.propTypes = {
-  href: React.PropTypes.string,
+  href: React.PropTypes.string.isRequired,
   icon: React.PropTypes.element.isRequired,
   onClick: React.PropTypes.func,
 };
 
 AppBarButton.defaultProps = {
-  href: null,
-  onClick: null,
+  onClick: undefined,
 };
 
 export default AppBarButton;

@@ -15,8 +15,8 @@ import { MuiThemeProvider } from 'material-ui';
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import AppBar from '../../components/AppBar/index';
-import AppDrawer from '../../components/AppDrawer/index';
 import theme from '../../styles/theme';
+import AppDrawer from '../AppDrawer/index';
 
 const AppWrapper = styled.div`
   height: 100%;

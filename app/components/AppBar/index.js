@@ -4,45 +4,31 @@
  *
  */
 
-import { Paper } from 'material-ui';
 import React from 'react';
 import { FaBars, FaHeart, FaHome, FaSearch } from 'react-icons/lib/fa/index';
-import styled from 'styled-components';
+import AppDrawerToggle from '../../containers/AppDrawerToggle/index';
 import theme from '../../styles/theme';
 import AppBarButton from '../AppBarButton/index';
-
-const AppBarWrapper = styled(Paper)`
-  bottom: 0;
-  position: fixed;
-  width: 100%;
-  z-index: 1100;
-`;
-
-const StyledNav = styled.nav`
-  display: flex;
-`;
-
-const AppBarIconLeftContainer = styled.div``;
-
-const AppBarIconRightContainer = styled.div`
-  margin-left: auto;
-`;
+import AppBarWrapper from '../AppBarWrapper/index';
+import ContainerLeft from '../ContainerLeft/index';
+import ContainerRight from '../ContainerRight/index';
+import StyledNav from '../StyledNav/index';
 
 class AppBar extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
       <AppBarWrapper>
         <StyledNav>
-          <AppBarIconLeftContainer>
+          <ContainerLeft>
             <AppBarButton
               icon={
                 <FaHome size="100%" color={theme.button} alt="Go to homepage" />
               }
               href="#"
             />
-          </AppBarIconLeftContainer>
+          </ContainerLeft>
 
-          <AppBarIconRightContainer>
+          <ContainerRight>
             <AppBarButton
               icon={
                 <FaSearch
@@ -63,11 +49,11 @@ class AppBar extends React.Component { // eslint-disable-line react/prefer-state
               }
               href="#"
             />
-            <AppBarButton
+            <AppDrawerToggle
               icon={<FaBars size="100%" color={theme.button} alt="Navigate" />}
               href="#"
             />
-          </AppBarIconRightContainer>
+          </ContainerRight>
         </StyledNav>
       </AppBarWrapper>
     );
