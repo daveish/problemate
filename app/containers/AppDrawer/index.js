@@ -19,6 +19,7 @@ class AppDrawer extends React.PureComponent { // eslint-disable-line react/prefe
         openSecondary open={this.props.open}
         docked={false}
         onRequestChange={this.props.onAppDrawerToggle}
+        swipeAreaWidth={60}
       >
         <MenuItem>
           Menu Item
