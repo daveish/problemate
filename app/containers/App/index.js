@@ -13,6 +13,7 @@
 
 import { MuiThemeProvider } from 'material-ui';
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
 import AppBar from '../../components/AppBar/index';
 import theme from '../../styles/theme';
@@ -46,7 +47,7 @@ class App extends React.PureComponent { // eslint-disable-line react/prefer-stat
 }
 
 App.propTypes = {
-  children: React.PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default App;

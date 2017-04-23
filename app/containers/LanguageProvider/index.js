@@ -7,6 +7,7 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { IntlProvider } from 'react-intl';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -27,9 +28,9 @@ export class LanguageProvider extends React.PureComponent { // eslint-disable-li
 }
 
 LanguageProvider.propTypes = {
-  locale: React.PropTypes.string.isRequired,
-  messages: React.PropTypes.object.isRequired,
-  children: React.PropTypes.element.isRequired,
+  locale: PropTypes.string.isRequired,
+  messages: PropTypes.object.isRequired,
+  children: PropTypes.element.isRequired,
 };
 
 const mapStateToProps = createSelector(

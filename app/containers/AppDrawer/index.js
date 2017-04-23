@@ -5,7 +5,8 @@
  */
 
 import { Drawer, MenuItem } from 'material-ui';
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { toggleAppDrawer } from '../AppDrawerToggle/actions';

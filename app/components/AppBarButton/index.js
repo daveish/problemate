@@ -5,6 +5,7 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import StyledIconButton from '../StyledIconButton/index';
 
 class AppBarButton extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -18,9 +19,9 @@ class AppBarButton extends React.Component { // eslint-disable-line react/prefer
 }
 
 AppBarButton.propTypes = {
-  href: React.PropTypes.string.isRequired,
-  icon: React.PropTypes.element.isRequired,
-  onClick: React.PropTypes.func,
+  href: PropTypes.string.isRequired,
+  icon: PropTypes.element.isRequired,
+  onClick: PropTypes.func,
 };
 
 AppBarButton.defaultProps = {
