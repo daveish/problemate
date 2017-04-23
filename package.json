@@ -31,7 +31,7 @@
     "clean:all": "yarn run analyze:clean && yarn run test:clean && yarn run build:clean",
     "generate": "plop --plopfile internals/generators/index.js",
     "lint": "yarn run lint:js",
-    "lint:eslint": "eslint --cache --ignore-path .gitignore --ignore-pattern internals/scripts",
+    "lint:eslint": "eslint --cache",
     "lint:js": "yarn run lint:eslint -- . ",
     "lint:staged": "lint-staged",
     "pretest": "yarn run test:clean && yarn run lint",
