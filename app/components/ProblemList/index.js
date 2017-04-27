@@ -4,33 +4,19 @@
  *
  */
 
-import { Card, CardHeader, CardMedia } from 'material-ui';
 import React from 'react';
-import styled from 'styled-components';
+import ProblemCard from '../ProblemCard/index';
 
-const StyledCard = styled(Card)`
-  margin: 1rem;
-`;
+const cardItems = [];
 
-const StyledCardHeader = styled(CardHeader)`
-  display: inline-flex;
-  white-space: normal !important;
-
-  div {
-    padding-right: 0 !important;
-  }
-`;
-
-const cards = [];
-
-for (let i = 0; i < 10000; i += 1) {
-  cards.push({
+for (let i = 0; i < 20; i += 1) {
+  cardItems.push({
     id: i,
     image: 'http://placehold.it/300x100',
     imageAlternative: '',
     title: 'Device works but does not update',
     author: 'RubyCat',
-    upvotes: '100',
+    upvotes: 100,
     created: 'vor 2 Minuten',
     avatar: 'http://placehold.it/40x40',
   });
@@ -38,19 +24,17 @@ for (let i = 0; i < 10000; i += 1) {
 
 class ProblemList extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   getCards = () => (
-    cards.map((card) => (
-      <StyledCard key={card.id}>
-        <CardMedia>
-          <img src={card.image} alt={card.imageAlternative} />
-        </CardMedia>
-        <StyledCardHeader
-          title={card.title}
-          subtitle={
-            `${card.author} - ${card.upvotes} Feel you - ${card.created}`
-          }
-          avatar={card.avatar}
-        />
-      </StyledCard>
+    cardItems.map((card) => (
+      <ProblemCard
+        id={card.id}
+        title={card.title}
+        author={card.author}
+        avatar={card.avatar}
+        image={card.image}
+        imageAlternative={card.imageAlternative}
+        upvotes={card.upvotes}
+        created={card.created}
+      />
     ))
   );
 
