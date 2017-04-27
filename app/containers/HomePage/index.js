@@ -26,70 +26,94 @@ const StyledCardHeader = styled(CardHeader)`
   }
 `;
 
+const cards = [
+  {
+    image: 'http://placehold.it/300x100',
+    imageAlternative: '',
+    title: 'Device works but does not update',
+    author: 'RubyCat',
+    upvotes: '100',
+    created: 'vor 2 Minuten',
+    avatar: 'http://placehold.it/40x40',
+  },
+  {
+    image: 'http://placehold.it/300x100',
+    imageAlternative: '',
+    title: 'Device works but does not update',
+    author: 'RubyCat',
+    upvotes: '100',
+    created: 'vor 2 Minuten',
+    avatar: 'http://placehold.it/40x40',
+  },
+  {
+    image: 'http://placehold.it/300x100',
+    imageAlternative: '',
+    title: 'Device works but does not update',
+    author: 'RubyCat',
+    upvotes: '100',
+    created: 'vor 2 Minuten',
+    avatar: 'http://placehold.it/40x40',
+  },
+  {
+    image: 'http://placehold.it/300x100',
+    imageAlternative: '',
+    title: 'Device works but does not update',
+    author: 'RubyCat',
+    upvotes: '100',
+    created: 'vor 2 Minuten',
+    avatar: 'http://placehold.it/40x40',
+  },
+  {
+    image: 'http://placehold.it/300x100',
+    imageAlternative: '',
+    title: 'Device works but does not update',
+    author: 'RubyCat',
+    upvotes: '100',
+    created: 'vor 2 Minuten',
+    avatar: 'http://placehold.it/40x40',
+  },
+  {
+    image: 'http://placehold.it/300x100',
+    imageAlternative: '',
+    title: 'Device works but does not update',
+    author: 'RubyCat',
+    upvotes: '100',
+    created: 'vor 2 Minuten',
+    avatar: 'http://placehold.it/40x40',
+  },
+  {
+    image: 'http://placehold.it/300x100',
+    imageAlternative: '',
+    title: 'Device works but does not update',
+    author: 'RubyCat',
+    upvotes: '100',
+    created: 'vor 2 Minuten',
+    avatar: 'http://placehold.it/40x40',
+  },
+];
+
 export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+  getCards = () => (
+    cards.map((card) => (
+      <StyledCard>
+        <CardMedia>
+          <img src={card.image} alt={card.imageAlternative} />
+        </CardMedia>
+        <StyledCardHeader
+          title={card.title}
+          subtitle={
+            `${card.author} - ${card.upvotes} Feel you - ${card.created}`
+          }
+          avatar={card.avatar}
+        />
+      </StyledCard>
+    ))
+  );
+
   render() {
     return (
       <div>
-        <StyledCard>
-          <CardMedia>
-            <img src="http://placehold.it/300x100" alt="" />
-          </CardMedia>
-          <StyledCardHeader
-            title={'Device works but does not update'}
-            subtitle={'RubyCat - 100 Feel you - vor 2 Minuten'}
-            avatar="http://placehold.it/40x40"
-          />
-        </StyledCard>
-        <StyledCard>
-          <CardMedia>
-            <img src="http://placehold.it/300x100" alt="" />
-          </CardMedia>
-          <StyledCardHeader
-            title={'Device is never working'}
-            subtitle={'RubyCat - 2 Tsd. Feel you - Gestern'}
-            avatar="http://placehold.it/40x40"
-          />
-        </StyledCard>
-        <StyledCard>
-          <CardMedia>
-            <img src="http://placehold.it/300x100" alt="" />
-          </CardMedia>
-          <StyledCardHeader
-            title={'Sports at school sucks!!'}
-            subtitle={'nerd1101 - 2 Tsd. Feel you - vor 1 Monat'}
-            avatar="http://placehold.it/40x40"
-          />
-        </StyledCard>
-        <StyledCard>
-          <CardMedia>
-            <img src="http://placehold.it/300x100" alt="" />
-          </CardMedia>
-          <StyledCardHeader
-            title={'My pet is not eating'}
-            subtitle={'nerd1101 - 2 Tsd. Feel you - vor 2 Monaten'}
-            avatar="http://placehold.it/40x40"
-          />
-        </StyledCard>
-        <StyledCard>
-          <CardMedia>
-            <img src="http://placehold.it/300x100" alt="" />
-          </CardMedia>
-          <StyledCardHeader
-            title={'No success in the job'}
-            subtitle={'GlobeTrotter - 2 Tsd. Feel you - vor 4 Monaten'}
-            avatar="http://placehold.it/40x40"
-          />
-        </StyledCard>
-        <StyledCard>
-          <CardMedia>
-            <img src="http://placehold.it/300x100" alt="" />
-          </CardMedia>
-          <StyledCardHeader
-            title={'Device switching off automatically'}
-            subtitle={'RubyCat - 1 Tsd. Feel you - vor 1 Jahr'}
-            avatar="http://placehold.it/40x40"
-          />
-        </StyledCard>
+        {this.getCards()}
       </div>
     );
   }
