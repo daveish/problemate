@@ -4,14 +4,22 @@
  *
  */
 
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
+import { Link } from 'react-router';
 import StyledIconButton from '../StyledIconButton/index';
 
 class AppBarButton extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
+    const containerElement = <Link to={this.props.href} />;
+    const onTouchTap = this.props.onTouchTap;
+
     return (
-      <StyledIconButton href={this.props.href} onTouchTap={this.props.onClick}>
+      <StyledIconButton
+        {
+          ...!this.props.toggleLink ? { containerElement } : { onTouchTap }
+        }
+      >
         {this.props.icon}
       </StyledIconButton>
     );
@@ -21,11 +29,13 @@ class AppBarButton extends React.Component { // eslint-disable-line react/prefer
 AppBarButton.propTypes = {
   href: PropTypes.string.isRequired,
   icon: PropTypes.element.isRequired,
-  onClick: PropTypes.func,
+  toggleLink: PropTypes.bool,
+  onTouchTap: PropTypes.func,
 };
 
 AppBarButton.defaultProps = {
-  onClick: undefined,
+  toggleLink: false,
+  onTouchTap: null,
 };
 
 export default AppBarButton;

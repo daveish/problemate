@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import { FaBars, FaHeart, FaHome, FaSearch } from 'react-icons/lib/fa/index';
+import { FaBars, FaHome } from 'react-icons/lib/fa/index';
 import AppDrawerToggle from '../../containers/AppDrawerToggle/index';
 import theme from '../../styles/theme';
 import AppBarButton from '../AppBarButton/index';
@@ -24,12 +24,12 @@ class AppBar extends React.Component { // eslint-disable-line react/prefer-state
               icon={
                 <FaHome size="100%" color={theme.button} alt="Go to homepage" />
               }
-              href="#"
+              href="/"
             />
           </ContainerLeft>
 
           <ContainerRight>
-            <AppBarButton
+            {/* <AppBarButton
               icon={
                 <FaSearch
                   size="100%"
@@ -38,8 +38,8 @@ class AppBar extends React.Component { // eslint-disable-line react/prefer-state
                 />
               }
               href="#"
-            />
-            <AppBarButton
+            />*/}
+            {/* <AppBarButton
               icon={
                 <FaHeart
                   size="100%"
@@ -48,7 +48,7 @@ class AppBar extends React.Component { // eslint-disable-line react/prefer-state
                 />
               }
               href="#"
-            />
+            />*/}
             <AppDrawerToggle
               icon={<FaBars size="100%" color={theme.button} alt="Navigate" />}
               href="#"
