@@ -24,18 +24,7 @@ for (let i = 0; i < 20; i += 1) {
 
 class ProblemList extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   getCards = () => (
-    cardItems.map((card) => (
-      <ProblemCard
-        id={card.id}
-        title={card.title}
-        author={card.author}
-        avatar={card.avatar}
-        image={card.image}
-        imageAlternative={card.imageAlternative}
-        upvotes={card.upvotes}
-        created={card.created}
-      />
-    ))
+    cardItems.map((card) => <ProblemCard key={card.id} {...card} />)
   );
 
   render() {

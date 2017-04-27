@@ -25,7 +25,7 @@ const StyledCardHeader = styled(CardHeader)`
 class ProblemCard extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <StyledCard key={this.props.id}>
+      <StyledCard>
         <CardMedia>
           <img src={this.props.image} alt={this.props.imageAlternative} />
         </CardMedia>
@@ -42,7 +42,6 @@ class ProblemCard extends React.PureComponent { // eslint-disable-line react/pre
 }
 
 ProblemCard.propTypes = {
-  id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired,
