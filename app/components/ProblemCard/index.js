@@ -15,7 +15,10 @@ const StyledCard = styled(Card)`
 
 const StyledCardHeader = styled(CardHeader)`
   display: inline-flex;
-  white-space: normal !important;
+
+  img {
+    flex-shrink: 0;
+  }
 
   div {
     padding-right: 0 !important;
