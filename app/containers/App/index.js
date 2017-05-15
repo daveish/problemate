@@ -34,7 +34,7 @@ class App extends React.PureComponent { // eslint-disable-line react/prefer-stat
       <MuiThemeProvider>
         <ThemeProvider theme={theme}>
           <AppWrapper>
-            <AppBar />
+            <AppBar mainHand={'right'} />
             <AppDrawer />
             <StyledMain>
               {React.Children.toArray(this.props.children)}
