@@ -10,7 +10,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledCard = styled(Card)`
-  margin: 1rem;
+  margin: 0.625rem;
 `;
 
 const StyledCardHeader = styled(CardHeader)`
