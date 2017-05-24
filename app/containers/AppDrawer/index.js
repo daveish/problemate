@@ -16,7 +16,8 @@ class AppDrawer extends React.PureComponent { // eslint-disable-line react/prefe
   render() {
     return (
       <Drawer
-        openSecondary open={this.props.open}
+        openSecondary={this.props.mainHand === 'right'}
+        open={this.props.open}
         docked={false}
         onRequestChange={this.props.onAppDrawerToggle}
         swipeAreaWidth={60}
@@ -32,6 +33,7 @@ class AppDrawer extends React.PureComponent { // eslint-disable-line react/prefe
 AppDrawer.propTypes = {
   open: PropTypes.bool,
   onAppDrawerToggle: PropTypes.func,
+  mainHand: PropTypes.string.isRequired,
 };
 
 AppDrawer.defaultProps = {

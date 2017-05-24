@@ -28,14 +28,16 @@ const StyledMain = styled.main`
   padding-bottom: 3.5rem;
 `;
 
+const mainHand = 'right';
+
 class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
       <MuiThemeProvider>
         <ThemeProvider theme={theme}>
           <AppWrapper>
-            <AppBar mainHand={'right'} />
-            <AppDrawer />
+            <AppBar mainHand={mainHand} />
+            <AppDrawer mainHand={mainHand} />
             <StyledMain>
               {React.Children.toArray(this.props.children)}
             </StyledMain>

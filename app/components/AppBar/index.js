@@ -15,43 +15,64 @@ import ContainerLeft from '../ContainerLeft/index';
 import ContainerRight from '../ContainerRight/index';
 import StyledNav from '../StyledNav/index';
 
+const mainItems = [
+  <AppBarButton
+    key="Search"
+    icon={
+      <FaSearch
+        size="100%"
+        color={theme.searchIconColor}
+        alt="Search"
+      />
+    }
+    href="/search"
+  />,
+  <AppBarButton
+    key="Favorize"
+    icon={
+      <FaHeart
+        size="100%"
+        color={theme.heartIconColor}
+        alt="Favorize"
+      />
+    }
+    href="/favorites"
+  />,
+  <AppDrawerToggle
+    key="Navigation"
+    icon={<FaBars size="100%" color={theme.button} alt="Navigate" />}
+    href="#"
+  />,
+];
+
+const sideItems = [
+  <AppBarButton
+    key="Home"
+    icon={
+      <FaHome size="100%" color={theme.button} alt="Go to homepage" />
+    }
+    href="/"
+  />,
+];
+
+const mainItemsReversed = mainItems.slice().reverse();
+const sideItemsReversed = sideItems.slice().reverse();
+
 class AppBar extends React.Component { // eslint-disable-line react/prefer-stateless-function
   getMainItems = () => (
-    <div>
-      <AppBarButton
-        icon={
-          <FaSearch
-            size="100%"
-            color={theme.searchIconColor}
-            alt="Search"
-          />
-        }
-        href="/search"
-      />
-      <AppBarButton
-        icon={
-          <FaHeart
-            size="100%"
-            color={theme.heartIconColor}
-            alt="Favorize"
-          />
-        }
-        href="/favorites"
-      />
-      <AppDrawerToggle
-        icon={<FaBars size="100%" color={theme.button} alt="Navigate" />}
-        href="#"
-      />
-    </div>
+    mainItems
   );
 
   getSideItems = () => (
-    <AppBarButton
-      icon={
-        <FaHome size="100%" color={theme.button} alt="Go to homepage" />
-      }
-      href="/"
-    />
+    sideItems
+  );
+
+  getMainItemsReversed = () => (
+    mainItemsReversed
+  );
+
+  getSideItemsReversed = () => (
+    sideItemsReversed
   );
 
   render() {
@@ -62,7 +83,7 @@ class AppBar extends React.Component { // eslint-disable-line react/prefer-state
             {
               this.props.mainHand === 'right'
                 ? this.getSideItems()
-                : this.getMainItems()
+                : this.getMainItemsReversed()
             }
           </ContainerLeft>
 
@@ -70,7 +91,7 @@ class AppBar extends React.Component { // eslint-disable-line react/prefer-state
             {
               this.props.mainHand === 'right'
                 ? this.getMainItems()
-                : this.getSideItems()
+                : this.getSideItemsReversed()
             }
           </ContainerRight>
         </StyledNav>
