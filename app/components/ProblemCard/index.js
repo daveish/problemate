@@ -25,6 +25,27 @@ const StyledCardHeader = styled(CardHeader)`
   }
 `;
 
+const StyledCardSubtitle = styled.ul`
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  li:after {
+    content: " \\002022";
+    padding-right: 0.249166667em;
+  }
+
+  li:last-child:after {
+    content: "";
+    padding-right: 0;
+  }
+`;
+
 class ProblemCard extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
@@ -35,9 +56,19 @@ class ProblemCard extends React.PureComponent { // eslint-disable-line react/pre
         <StyledCardHeader
           title={this.props.title}
           subtitle={
-            `${this.props.author} - ${this.props.upvotes} Feel you - ${this.props.created}`
+            <StyledCardSubtitle>
+              <li>{this.props.author}</li>
+              <li>{this.props.upvotes} Feel you</li>
+              <li>{this.props.created}</li>
+            </StyledCardSubtitle>
           }
           avatar={this.props.avatar}
+          titleStyle={{
+            fontSize: '0.875rem',
+          }}
+          subtitleStyle={{
+            fontSize: '0.75rem',
+          }}
         />
       </StyledCard>
     );
