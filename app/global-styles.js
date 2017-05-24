@@ -22,6 +22,7 @@ injectGlobal`
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 1.45;
     color: #333;
+    background-color: #f7f7f7;
   }
 
   body.fontLoaded {
