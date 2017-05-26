@@ -9,16 +9,16 @@ import ProblemCard from '../ProblemCard/index';
 
 const cardItems = [];
 
-for (let i = 0; i < 20; i += 1) {
+for (let i = 0; i < 10; i += 1) {
   cardItems.push({
     id: i,
-    image: 'http://placehold.it/300x100',
+    image: 'http://lorempixel.com/300/100/',
     imageAlternative: '',
     title: 'Device works but does not update',
     author: 'RubyCat',
     upvotes: 100,
     created: 'vor 2 Minuten',
-    avatar: 'http://placehold.it/40x40',
+    avatar: 'http://lorempixel.com/40/40/people/',
   });
 }
 
