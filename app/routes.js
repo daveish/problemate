@@ -21,17 +21,25 @@ export default function createRoutes(store) {
       path: '/',
       name: 'home',
       getComponent(nextState, cb) {
-        const importModules = Promise.all([
-          import('containers/HomePage'),
-        ]);
-
-        const renderRoute = loadModule(cb);
-
-        importModules.then(([component]) => {
-          renderRoute(component);
-        });
-
-        importModules.catch(errorLoading);
+        import('containers/HomePage')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+    }, {
+      path: '/favorites',
+      name: 'favorites',
+      getComponent(location, cb) {
+        import('containers/FavoritesPage')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+    }, {
+      path: '/search',
+      name: 'search',
+      getComponent(location, cb) {
+        import('containers/SearchPage')
+          .then(loadModule(cb))
+          .catch(errorLoading);
       },
     }, {
       path: '*',
