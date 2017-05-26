@@ -5,12 +5,29 @@
  */
 
 import { Drawer, MenuItem } from 'material-ui';
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
+import styled from 'styled-components';
 import { toggleAppDrawer } from '../AppDrawerToggle/actions';
 import makeSelectAppDrawerOpen from './selectors';
+
+const StyledContainer = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
+  height: 100%;
+  overflow-y: auto;
+`;
+
+const menuItems = [];
+
+for (let i = 1; i <= 3; i += 1) {
+  menuItems.push({
+    id: i,
+    text: `Menu Item ${i}`,
+  });
+}
 
 class AppDrawer extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
@@ -22,9 +39,11 @@ class AppDrawer extends React.PureComponent { // eslint-disable-line react/prefe
         onRequestChange={this.props.onAppDrawerToggle}
         swipeAreaWidth={60}
       >
-        <MenuItem>
-          Menu Item
-        </MenuItem>
+        <StyledContainer>
+          {menuItems.map(
+            (item) => <MenuItem key={item.id}>{item.text}</MenuItem>,
+          )}
+        </StyledContainer>
       </Drawer>
     );
   }
