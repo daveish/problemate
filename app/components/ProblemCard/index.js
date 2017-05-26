@@ -13,12 +13,14 @@ const StyledCard = styled(Card)`
   margin: 0.625rem;
 `;
 
+const StyledCardMedia = styled(CardMedia)`
+  img {
+    border-radius: 2px 2px 0 0;
+  }
+`;
+
 const StyledCardHeader = styled(CardHeader)`
   display: inline-flex;
-
-  img {
-    flex-shrink: 0;
-  }
 
   div {
     padding-right: 0 !important;
@@ -50,9 +52,9 @@ class ProblemCard extends React.PureComponent { // eslint-disable-line react/pre
   render() {
     return (
       <StyledCard>
-        <CardMedia>
+        <StyledCardMedia>
           <img src={this.props.image} alt={this.props.imageAlternative} />
-        </CardMedia>
+        </StyledCardMedia>
         <StyledCardHeader
           title={this.props.title}
           subtitle={
