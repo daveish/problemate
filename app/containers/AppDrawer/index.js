@@ -4,7 +4,8 @@
  *
  */
 
-import { Drawer, MenuItem } from 'material-ui';
+import Drawer from 'material-ui/Drawer/Drawer';
+import MenuItem from 'material-ui/MenuItem/MenuItem';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';

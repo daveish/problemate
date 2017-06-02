@@ -6,7 +6,10 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import { FaBars, FaHeart, FaHome, FaSearch } from 'react-icons/lib/fa/index';
+import FaBars from 'react-icons/lib/fa/bars';
+import FaHeart from 'react-icons/lib/fa/heart';
+import FaHome from 'react-icons/lib/fa/home';
+import FaSearch from 'react-icons/lib/fa/search';
 import AppDrawerToggle from '../../containers/AppDrawerToggle/index';
 import theme from '../../styles/theme';
 import AppBarButton from '../AppBarButton/index';

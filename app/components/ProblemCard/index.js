@@ -4,7 +4,9 @@
  *
  */
 
-import { Card, CardHeader, CardMedia } from 'material-ui';
+import Card from 'material-ui/Card/Card';
+import CardHeader from 'material-ui/Card/CardHeader';
+import CardMedia from 'material-ui/Card/CardMedia';
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';

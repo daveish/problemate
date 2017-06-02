@@ -1,4 +1,4 @@
-import { IconButton } from 'material-ui';
+import IconButton from 'material-ui/IconButton/IconButton';
 import styled from 'styled-components';
 
 const StyledIconButton = styled(IconButton)`

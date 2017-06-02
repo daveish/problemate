@@ -11,7 +11,7 @@
  * the linting exception.
  */
 
-import { MuiThemeProvider } from 'material-ui';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
