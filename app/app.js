@@ -48,10 +48,10 @@ import createRoutes from './routes';
 
 // Observe loading of Roboto (to remove Roboto, remove the <link> tag in
 // the index.html file and this observer)
-const openSansObserver = new FontFaceObserver('Roboto', {});
+const robotoObserver = new FontFaceObserver('Roboto', {});
 
 // When Roboto is loaded, add a font-family using Roboto to the body
-openSansObserver.load().then(() => {
+robotoObserver.load().then(() => {
   document.body.classList.add('fontLoaded');
 }, () => {
   document.body.classList.remove('fontLoaded');

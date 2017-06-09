@@ -41,7 +41,7 @@ const StyledCardSubtitle = styled.ul`
 
   li:after {
     content: " \\002022";
-    padding-right: 0.249166667em;
+    padding-right: 0.249166667rem;
   }
 
   li:last-child:after {
