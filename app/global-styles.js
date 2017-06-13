@@ -59,4 +59,32 @@ injectGlobal`
   small, .font_small {
     font-size: 0.8em;
   }
+
+  .headroom {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1100;
+    width: 100%;
+    transition: transform 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  }
+
+  .headroom-wrapper {
+    height: 0 !important;
+  }
+
+  .headroom--unfixed {
+    position: fixed;
+    transform: translateY(0%);
+  }
+
+  .headroom--unpinned {
+    position: fixed;
+    transform: translateY(100%);
+  }
+
+  .headroom--pinned {
+    position: fixed;
+    transform: translateY(0%);
+  }
 `;

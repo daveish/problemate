@@ -223,6 +223,7 @@
     "prop-types": "^15.5.8",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-headroom": "^2.1.5",
     "react-helmet": "^5.0.0",
     "react-icons": "^2.2.3",
     "react-intl": "^2.2.3",
