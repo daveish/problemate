@@ -6,11 +6,17 @@
 
 import Drawer from 'material-ui/Drawer/Drawer';
 import MenuItem from 'material-ui/MenuItem/MenuItem';
+import Toolbar from 'material-ui/Toolbar/Toolbar';
 import PropTypes from 'prop-types';
 import React from 'react';
+import FaEllipsisV from 'react-icons/lib/fa/ellipsis-v';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import styled from 'styled-components';
+import AppBarButton from '../../components/AppBarButton/index';
+import ContainerLeft from '../../components/ContainerLeft/index';
+import ContainerRight from '../../components/ContainerRight/index';
+import theme from '../../styles/theme';
 import { toggleAppDrawer } from '../AppDrawerToggle/actions';
 import makeSelectAppDrawerOpen from './selectors';
 
@@ -41,6 +47,23 @@ class AppDrawer extends React.PureComponent { // eslint-disable-line react/prefe
         swipeAreaWidth={60}
       >
         <StyledContainer>
+          <Toolbar>
+            <ContainerLeft>
+              {null}
+            </ContainerLeft>
+            <ContainerRight>
+              <AppBarButton
+                href="/settings"
+                icon={
+                  <FaEllipsisV
+                    size="100%"
+                    color={theme.searchIconColor}
+                    alt="Search"
+                  />
+                }
+              />
+            </ContainerRight>
+          </Toolbar>
           {menuItems.map(
             (item) => <MenuItem key={item.id}>{item.text}</MenuItem>,
           )}
