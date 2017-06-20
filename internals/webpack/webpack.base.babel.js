@@ -94,6 +94,9 @@ module.exports = (options) => ({
       'jsnext:main',
       'main',
     ],
+    alias: {
+      'styled-components': path.resolve(process.cwd(), 'node_modules/styled-components/dist/styled-components.min.js'),
+    },
   },
   devtool: options.devtool,
   target: 'web', // Make web variables accessible to webpack, e.g. window
