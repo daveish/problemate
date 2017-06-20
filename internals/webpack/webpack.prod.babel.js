@@ -66,6 +66,10 @@ module.exports = require('./webpack.base.babel')({
     }),
   ],
 
+  babelQuery: {
+    cacheDirectory: true,
+  },
+
   performance: {
     assetFilter: (assetFilename) => !(/(\.map$)|(^(main\.|favicon\.))/.test(assetFilename)),
   },
