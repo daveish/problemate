@@ -21,10 +21,6 @@ module.exports = require('./webpack.base.babel')({
       name: 'vendor',
       minChunks: ({ resource }) => /node_modules/.test(resource),
     }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'common',
-      minChunks: 2,
-    }),
 
     // Minify and optimize the index.html
     new HtmlWebpackPlugin({
