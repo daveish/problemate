@@ -6,7 +6,6 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import Headroom from 'react-headroom';
 import FaBars from 'react-icons/lib/fa/bars';
 import FaHeart from 'react-icons/lib/fa/heart';
 import FaHome from 'react-icons/lib/fa/home';
@@ -81,29 +80,25 @@ class AppBar extends React.Component { // eslint-disable-line react/prefer-state
 
   render() {
     return (
-      <Headroom
-        disableInlineStyles
-      >
-        <AppBarWrapper zDepth={5}>
-          <StyledNav>
-            <ContainerLeft>
-              {
-                this.props.mainHand === 'right'
-                  ? this.getSideItems()
-                  : this.getMainItemsReversed()
-              }
-            </ContainerLeft>
+      <AppBarWrapper zDepth={5}>
+        <StyledNav>
+          <ContainerLeft>
+            {
+              this.props.mainHand === 'right'
+                ? this.getSideItems()
+                : this.getMainItemsReversed()
+            }
+          </ContainerLeft>
 
-            <ContainerRight>
-              {
-                this.props.mainHand === 'right'
-                  ? this.getMainItems()
-                  : this.getSideItemsReversed()
-              }
-            </ContainerRight>
-          </StyledNav>
-        </AppBarWrapper>
-      </Headroom>
+          <ContainerRight>
+            {
+              this.props.mainHand === 'right'
+                ? this.getMainItems()
+                : this.getSideItemsReversed()
+            }
+          </ContainerRight>
+        </StyledNav>
+      </AppBarWrapper>
     );
   }
 }
