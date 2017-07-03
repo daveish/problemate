@@ -5554,9 +5554,9 @@ map-obj@^1.0.0, map-obj@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-1.0.1.tgz#d933ceb9205d82bdcf4886f6742bdc2b4dea146d"
 
-material-ui@^0.18.4:
-  version "0.18.4"
-  resolved "https://registry.yarnpkg.com/material-ui/-/material-ui-0.18.4.tgz#afa0db1658d66b432ec0e0edb83727d65e6390a1"
+material-ui@^0.18.5:
+  version "0.18.5"
+  resolved "https://registry.yarnpkg.com/material-ui/-/material-ui-0.18.5.tgz#3dcd9e2f31a5fb1281224056b51261b8af4738d5"
   dependencies:
     babel-runtime "^6.23.0"
     inline-style-prefixer "^3.0.2"
@@ -7953,9 +7953,9 @@ simple-assign@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/simple-assign/-/simple-assign-0.1.0.tgz#17fd3066a5f3d7738f50321bb0f14ca281cc4baa"
 
-sinon@^2.1.0:
-  version "2.3.5"
-  resolved "https://registry.yarnpkg.com/sinon/-/sinon-2.3.5.tgz#9a2fc0ff8d526da716f30953aa2c65d518917f6c"
+sinon@^2.3.6:
+  version "2.3.6"
+  resolved "https://registry.yarnpkg.com/sinon/-/sinon-2.3.6.tgz#95378e7e0f976a9712e9b4591ff5b39e73dc3dde"
   dependencies:
     diff "^3.1.0"
     formatio "1.2.0"
