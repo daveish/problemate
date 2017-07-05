@@ -75,7 +75,9 @@ module.exports = (options) => ({
     // Always expose NODE_ENV to webpack, in order to use `process.env.NODE_ENV`
     // inside your code for any environment checks; UglifyJS will automatically
     // drop any unreachable code.
-    new webpack.EnvironmentPlugin(['NODE_ENV']),
+    new webpack.EnvironmentPlugin({
+      NODE_ENV: 'development',
+    }),
     new webpack.NamedModulesPlugin(),
   ]),
   resolve: {
