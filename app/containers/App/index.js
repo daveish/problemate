@@ -16,7 +16,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import AppBar from '../../components/AppBar/index';
-import LoadableHoc from '../../higherordercomponents/LoadableHoc';
 import theme from '../../styles/theme';
 import AppDrawer from '../AppDrawer/index';
 
@@ -24,9 +23,10 @@ const AppWrapper = styled.div`
   height: 100%;
 `;
 
-const LoadableMainContent = LoadableHoc({
-  loader: () => import('../../components/MainContent'),
-});
+const StyledMain = styled.main`
+  min-height: 100%;
+  padding-bottom: 3.5rem;
+`;
 
 const mainHand = 'right';
 
@@ -38,9 +38,9 @@ class App extends React.PureComponent { // eslint-disable-line react/prefer-stat
           <AppWrapper>
             <AppBar mainHand={mainHand} />
             <AppDrawer mainHand={mainHand} />
-            <LoadableMainContent>
+            <StyledMain>
               {React.Children.toArray(this.props.children)}
-            </LoadableMainContent>
+            </StyledMain>
           </AppWrapper>
         </ThemeProvider>
       </MuiThemeProvider>
