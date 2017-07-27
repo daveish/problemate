@@ -6,6 +6,7 @@
     "npm": ">=5",
     "node": ">=8"
   },
+  "license": "UNLICENSED",
   "scripts": {
     "analyze:clean": "rimraf stats.json && yarn run build:clean",
     "preanalyze": "yarn run analyze:clean",
