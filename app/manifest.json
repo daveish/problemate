@@ -1,5 +1,6 @@
 {
-  "name": "React Boilerplate",
+  "name": "Problemate",
+  "short_name": "Problemate",
   "icons": [
     {
       "src": "favicon.png",

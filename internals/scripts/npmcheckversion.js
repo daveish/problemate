@@ -6,6 +6,6 @@ exec('npm -v', function (err, stdout) {
   }
 
   if (parseFloat(stdout) < 4) {
-    throw new Error('[ERROR: React Boilerplate] You need npm version @>=4');
+    throw new Error('[ERROR: Problemate] You need npm version @>=4');
   }
 });

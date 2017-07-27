@@ -1,17 +1,11 @@
 {
-  "name": "react-boilerplate",
-  "version": "3.4.0",
-  "description": "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/react-boilerplate/react-boilerplate.git"
-  },
+  "name": "problemate",
+  "version": "1.0.0",
+  "description": "",
   "engines": {
     "npm": ">=5",
     "node": ">=8"
   },
-  "author": "Max Stoiber",
-  "license": "MIT",
   "scripts": {
     "analyze:clean": "rimraf stats.json && yarn run build:clean",
     "preanalyze": "yarn run analyze:clean",
@@ -162,7 +156,7 @@
     }
   },
   "dllPlugin": {
-    "path": "node_modules/react-boilerplate-dlls",
+    "path": "node_modules/problemate-dlls",
     "exclude": [
       "chalk",
       "compression",
