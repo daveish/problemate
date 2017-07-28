@@ -45,6 +45,13 @@ import './global-styles';
 // Import root routes
 import createRoutes from './routes';
 
+// Import why-did-you-update https://github.com/maicki/why-did-you-update/blob/MSBugFixesAndImprovements/umd/why-did-you-update.min.js
+import whyDidYouUpdate from './why-did-you-update.min';
+
+if (process.env.NODE_ENV !== 'production') {
+  whyDidYouUpdate(React);
+}
+
 // Observe loading of Roboto (to remove Roboto, remove the <link> tag in
 // the index.html file and this observer)
 const robotoObserver = new FontFaceObserver('Roboto', {});
