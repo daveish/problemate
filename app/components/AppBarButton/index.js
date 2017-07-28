@@ -9,7 +9,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import StyledIconButton from '../StyledIconButton/index';
 
-class AppBarButton extends React.Component { // eslint-disable-line react/prefer-stateless-function
+class AppBarButton extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     const containerElement = <Link to={this.props.href} />;
     const onTouchTap = this.props.onTouchTap;

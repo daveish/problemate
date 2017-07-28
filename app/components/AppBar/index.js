@@ -61,7 +61,7 @@ const sideItems = [
 const mainItemsReversed = mainItems.slice().reverse();
 const sideItemsReversed = sideItems.slice().reverse();
 
-class AppBar extends React.Component { // eslint-disable-line react/prefer-stateless-function
+class AppBar extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   getMainItems = () => (
     mainItems
   );
