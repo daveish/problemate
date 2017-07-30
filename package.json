@@ -4,7 +4,8 @@
   "description": "",
   "engines": {
     "npm": ">=5",
-    "node": ">=8"
+    "node": ">=8",
+    "yarn": ">=0.27.5"
   },
   "license": "UNLICENSED",
   "scripts": {
@@ -18,6 +19,7 @@
     "prebuild": "yarn run build:clean",
     "build": "NODE_ENV=production webpack --config internals/webpack/webpack.prod.babel.js --color -p --progress",
     "build:clean": "yarn run test:clean && rimraf ./build",
+    "heroku-postbuild": "yarn run build",
     "build:dll": "node ./internals/scripts/dependencies.js",
     "start": "NODE_ENV=development node server",
     "start:tunnel": "NODE_ENV=development ENABLE_TUNNEL=true node server",
