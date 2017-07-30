@@ -9,7 +9,7 @@ import MenuItem from 'material-ui/MenuItem/MenuItem';
 import Toolbar from 'material-ui/Toolbar/Toolbar';
 import PropTypes from 'prop-types';
 import React from 'react';
-import FaEllipsisV from 'react-icons/lib/fa/ellipsis-v';
+import FaCog from 'react-icons/lib/fa/cog';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import styled from 'styled-components';
@@ -55,7 +55,7 @@ class AppDrawer extends React.PureComponent { // eslint-disable-line react/prefe
               <AppBarButton
                 href="/settings"
                 icon={
-                  <FaEllipsisV
+                  <FaCog
                     size="100%"
                     color={theme.searchIconColor}
                     alt="Search"
