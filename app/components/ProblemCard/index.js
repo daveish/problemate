@@ -18,6 +18,9 @@ const StyledCard = styled(Card)`
 const StyledCardMedia = styled(CardMedia)`
   img {
     border-radius: 2px 2px 0 0;
+    display: block;
+    height: 100px;
+    background-color: #bcbcbc;
   }
 `;
 
