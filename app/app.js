@@ -43,7 +43,8 @@ import './global-styles';
 // Import root routes
 import createRoutes from './routes';
 
-// Import why-did-you-update https://github.com/maicki/why-did-you-update/blob/MSBugFixesAndImprovements/umd/why-did-you-update.min.js
+// Import why-did-you-update
+// https://github.com/maicki/why-did-you-update/blob/MSBugFixesAndImprovements/umd/why-did-you-update.min.js
 import whyDidYouUpdate from './why-did-you-update.min';
 
 if (process.env.NODE_ENV !== 'production') {

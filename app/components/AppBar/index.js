@@ -80,7 +80,7 @@ class AppBar extends React.PureComponent { // eslint-disable-line react/prefer-s
 
   render() {
     return (
-      <AppBarWrapper zDepth={5}>
+      <AppBarWrapper elevation={5} square>
         <StyledNav>
           <ContainerLeft>
             {

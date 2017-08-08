@@ -4,15 +4,14 @@
  *
  */
 
-import Drawer from 'material-ui/Drawer/Drawer';
-import MenuItem from 'material-ui/MenuItem/MenuItem';
-import Toolbar from 'material-ui/Toolbar/Toolbar';
+import { Drawer, List, Toolbar } from 'material-ui';
 import PropTypes from 'prop-types';
 import React from 'react';
 import FaCog from 'react-icons/lib/fa/cog';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import styled from 'styled-components';
+import { ListItem } from '../../../node_modules/material-ui/List/index';
 import AppBarButton from '../../components/AppBarButton/index';
 import ContainerLeft from '../../components/ContainerLeft/index';
 import ContainerRight from '../../components/ContainerRight/index';
@@ -64,9 +63,11 @@ class AppDrawer extends React.PureComponent { // eslint-disable-line react/prefe
               />
             </ContainerRight>
           </Toolbar>
-          {menuItems.map(
-            (item) => <MenuItem key={item.id}>{item.text}</MenuItem>,
-          )}
+          <List>
+            {menuItems.map(
+              (item) => <ListItem key={item.id}>{item.text}</ListItem>,
+            )}
+          </List>
         </StyledContainer>
       </Drawer>
     );

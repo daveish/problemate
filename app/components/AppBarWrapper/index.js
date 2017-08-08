@@ -1,8 +1,7 @@
-import Paper from 'material-ui/Paper/Paper';
+import { Paper } from 'material-ui';
 import styled from 'styled-components';
 
 const AppBarWrapper = styled(Paper)`
-  border-radius: 0 !important;
   bottom: 0;
   position: fixed;
   width: 100%;
