@@ -4,9 +4,7 @@
  *
  */
 
-import Card from 'material-ui/Card/Card';
-import CardHeader from 'material-ui/Card/CardHeader';
-import CardMedia from 'material-ui/Card/CardMedia';
+import { Avatar, Card, CardHeader, CardMedia } from 'material-ui';
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
@@ -58,24 +56,23 @@ class ProblemCard extends React.PureComponent { // eslint-disable-line react/pre
     return (
       <StyledCard>
         <StyledCardMedia>
-          <img src={this.props.image} alt={this.props.imageAlternative} />
+          <img
+            src={this.props.image}
+            alt={this.props.imageAlternative}
+          />
         </StyledCardMedia>
         <StyledCardHeader
           title={this.props.title}
-          subtitle={
+          subheader={
             <StyledCardSubtitle>
               <li>{this.props.author}</li>
               <li>{this.props.upvotes} Feel you</li>
               <li>{this.props.created}</li>
             </StyledCardSubtitle>
           }
-          avatar={this.props.avatar}
-          titleStyle={{
-            fontSize: '0.875rem',
-          }}
-          subtitleStyle={{
-            fontSize: '0.75rem',
-          }}
+          avatar={
+            <Avatar src={this.props.avatar} />
+          }
         />
       </StyledCard>
     );

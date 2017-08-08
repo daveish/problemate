@@ -16,7 +16,7 @@ class AppDrawerToggle extends React.PureComponent { // eslint-disable-line react
       <AppBarButton
         icon={this.props.icon}
         href={this.props.href}
-        onTouchTap={this.props.onAppDrawerToggle}
+        onClick={this.props.onAppDrawerToggle}
         toggleLink
       />
     );

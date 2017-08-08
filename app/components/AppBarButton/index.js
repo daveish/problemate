@@ -11,13 +11,13 @@ import StyledIconButton from '../StyledIconButton/index';
 
 class AppBarButton extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
-    const containerElement = <Link to={this.props.href} />;
-    const onTouchTap = this.props.onTouchTap;
+    const component = (props) => <Link to={this.props.href} {...props} />;
+    const onClick = this.props.onClick;
 
     return (
       <StyledIconButton
         {
-          ...!this.props.toggleLink ? { containerElement } : { onTouchTap }
+          ...!this.props.toggleLink ? { component } : { onClick }
         }
       >
         {this.props.icon}
@@ -30,12 +30,12 @@ AppBarButton.propTypes = {
   href: PropTypes.string.isRequired,
   icon: PropTypes.element.isRequired,
   toggleLink: PropTypes.bool,
-  onTouchTap: PropTypes.func,
+  onClick: PropTypes.func,
 };
 
 AppBarButton.defaultProps = {
   toggleLink: false,
-  onTouchTap: null,
+  onClick: null,
 };
 
 export default AppBarButton;
