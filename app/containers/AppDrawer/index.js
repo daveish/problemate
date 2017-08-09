@@ -39,11 +39,10 @@ class AppDrawer extends React.PureComponent { // eslint-disable-line react/prefe
   render() {
     return (
       <Drawer
-        openSecondary={this.props.mainHand === 'right'}
+        anchor={this.props.mainHand}
         open={this.props.open}
         docked={false}
-        onRequestChange={this.props.onAppDrawerToggle}
-        swipeAreaWidth={60}
+        onRequestClose={this.props.onAppDrawerToggle}
       >
         <StyledContainer>
           <Toolbar>
