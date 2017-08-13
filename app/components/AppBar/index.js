@@ -10,13 +10,17 @@ import FaBars from 'react-icons/lib/fa/bars';
 import FaHeart from 'react-icons/lib/fa/heart';
 import FaHome from 'react-icons/lib/fa/home';
 import FaSearch from 'react-icons/lib/fa/search';
+import styled from 'styled-components';
 import AppDrawerToggle from '../../containers/AppDrawerToggle/index';
 import theme from '../../styles/theme';
 import AppBarButton from '../AppBarButton/index';
 import AppBarWrapper from '../AppBarWrapper/index';
 import ContainerLeft from '../ContainerLeft/index';
 import ContainerRight from '../ContainerRight/index';
-import StyledNav from '../StyledNav/index';
+
+const StyledNav = styled.nav`
+  display: flex;
+`;
 
 const mainItems = [
   <AppBarButton
@@ -28,7 +32,7 @@ const mainItems = [
         alt="Search"
       />
     }
-    href="/search"
+    to="/search"
   />,
   <AppBarButton
     key="Favorize"
@@ -39,12 +43,17 @@ const mainItems = [
         alt="Favorize"
       />
     }
-    href="/favorites"
+    to="/favorites"
   />,
   <AppDrawerToggle
     key="Navigation"
-    icon={<FaBars size="100%" color={theme.button} alt="Navigate" />}
-    href="#"
+    icon={
+      <FaBars
+        size="100%"
+        color={theme.button}
+        alt="Navigate"
+      />
+    }
   />,
 ];
 
@@ -52,9 +61,13 @@ const sideItems = [
   <AppBarButton
     key="Home"
     icon={
-      <FaHome size="100%" color={theme.button} alt="Go to homepage" />
+      <FaHome
+        size="100%"
+        color={theme.button}
+        alt="Go to homepage"
+      />
     }
-    href="/"
+    to="/"
   />,
 ];
 
@@ -80,7 +93,10 @@ class AppBar extends React.PureComponent { // eslint-disable-line react/prefer-s
 
   render() {
     return (
-      <AppBarWrapper elevation={5} square>
+      <AppBarWrapper
+        elevation={5}
+        square
+      >
         <StyledNav>
           <ContainerLeft>
             {

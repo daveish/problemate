@@ -4,7 +4,7 @@
  *
  */
 
-import { Avatar, Card, CardHeader, CardMedia } from 'material-ui';
+import { Avatar, Card, CardHeader, CardMedia, Typography } from 'material-ui';
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
@@ -15,44 +15,29 @@ const StyledCard = styled(Card)`
 
 const StyledCardMedia = styled(CardMedia)`
   img {
-    border-radius: 2px 2px 0 0;
-    display: block;
-    height: 100px;
+    width: 100%;
     background-color: #bcbcbc;
   }
 `;
 
-const StyledCardHeader = styled(CardHeader)`
-  display: inline-flex;
-
-  div {
-    padding-right: 0 !important;
-  }
+const StyledCardSubtitle = styled.ul`
+  margin: 0;
+  padding: 0.25rem 0 0;
 `;
 
-const StyledCardSubtitle = styled.ul`
-  list-style: none;
-  margin: 0;
-  padding: 0;
+const StyledListItem = styled.li`
+  display: inline-block;
+  white-space: nowrap;
+`;
 
-  li {
-    display: inline-block;
-    white-space: nowrap;
-  }
-
-  li:after {
-    content: " \\002022";
-    padding-right: 0.249166667rem;
-  }
-
-  li:last-child:after {
-    content: "";
-    padding-right: 0;
-  }
+const Bullet = styled.span`
+  display: inline-block;
+  margin: 0 0.25rem;
 `;
 
 class ProblemCard extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
+    const bullet = <Bullet>•</Bullet>;
     return (
       <StyledCard>
         <StyledCardMedia>
@@ -61,13 +46,17 @@ class ProblemCard extends React.PureComponent { // eslint-disable-line react/pre
             alt={this.props.imageAlternative}
           />
         </StyledCardMedia>
-        <StyledCardHeader
-          title={this.props.title}
+        <CardHeader
+          title={<Typography>{this.props.title}</Typography>}
           subheader={
             <StyledCardSubtitle>
-              <li>{this.props.author}</li>
-              <li>{this.props.upvotes} Feel you</li>
-              <li>{this.props.created}</li>
+              <Typography type="caption">
+                <StyledListItem>{this.props.author}</StyledListItem>
+                {bullet}
+                <StyledListItem>{this.props.upvotes} Feel you</StyledListItem>
+                {bullet}
+                <StyledListItem>{this.props.created}</StyledListItem>
+              </Typography>
             </StyledCardSubtitle>
           }
           avatar={

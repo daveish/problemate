@@ -15,16 +15,13 @@ class AppDrawerToggle extends React.PureComponent { // eslint-disable-line react
     return (
       <AppBarButton
         icon={this.props.icon}
-        href={this.props.href}
         onClick={this.props.onAppDrawerToggle}
-        toggleLink
       />
     );
   }
 }
 
 AppDrawerToggle.propTypes = {
-  href: PropTypes.string.isRequired,
   icon: PropTypes.element.isRequired,
   onAppDrawerToggle: PropTypes.func,
 };

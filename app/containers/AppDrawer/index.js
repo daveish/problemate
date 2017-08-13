@@ -17,13 +17,18 @@ import ContainerLeft from '../../components/ContainerLeft/index';
 import ContainerRight from '../../components/ContainerRight/index';
 import theme from '../../styles/theme';
 import { toggleAppDrawer } from '../AppDrawerToggle/actions';
-import makeSelectAppDrawerOpen from './selectors';
+import { selectAppDrawerOpen } from '../AppDrawerToggle/selectors';
 
 const StyledContainer = styled.div`
+  width: 16rem;
   display: flex;
   flex-direction: column-reverse;
   height: 100%;
   overflow-y: auto;
+`;
+
+const AppDrawerList = styled(List)`
+  flex-grow: 0 !important;
 `;
 
 const menuItems = [];
@@ -51,7 +56,7 @@ class AppDrawer extends React.PureComponent { // eslint-disable-line react/prefe
             </ContainerLeft>
             <ContainerRight>
               <AppBarButton
-                href="/settings"
+                to="/settings"
                 icon={
                   <FaCog
                     size="100%"
@@ -62,11 +67,11 @@ class AppDrawer extends React.PureComponent { // eslint-disable-line react/prefe
               />
             </ContainerRight>
           </Toolbar>
-          <List>
+          <AppDrawerList>
             {menuItems.map(
               (item) => <ListItem key={item.id}>{item.text}</ListItem>,
             )}
-          </List>
+          </AppDrawerList>
         </StyledContainer>
       </Drawer>
     );
@@ -89,7 +94,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const mapStateToProps = createStructuredSelector({
-  open: makeSelectAppDrawerOpen(),
+  open: selectAppDrawerOpen,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppDrawer);

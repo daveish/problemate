@@ -4,21 +4,31 @@
  *
  */
 
+import { IconButton } from 'material-ui';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router';
-import StyledIconButton from '../StyledIconButton/index';
+import styled from 'styled-components';
+
+const StyledIconButton = styled(IconButton)`
+  height: 3.5rem !important;
+  width: 3.5rem !important;
+
+  svg {
+    padding: 1rem;
+  }
+`;
 
 class AppBarButton extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
-    const component = (props) => <Link to={this.props.href} {...props} />;
-    const onClick = this.props.onClick;
-
     return (
       <StyledIconButton
         {
-          ...!this.props.toggleLink ? { component } : { onClick }
+          ...this.props.to
+            ? { component: Link }
+            : { onClick: this.props.onClick }
         }
+        to={this.props.to}
       >
         {this.props.icon}
       </StyledIconButton>
@@ -27,14 +37,13 @@ class AppBarButton extends React.PureComponent { // eslint-disable-line react/pr
 }
 
 AppBarButton.propTypes = {
-  href: PropTypes.string.isRequired,
+  to: PropTypes.string,
   icon: PropTypes.element.isRequired,
-  toggleLink: PropTypes.bool,
   onClick: PropTypes.func,
 };
 
 AppBarButton.defaultProps = {
-  toggleLink: false,
+  to: '',
   onClick: null,
 };
 
