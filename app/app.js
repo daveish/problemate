@@ -29,6 +29,10 @@ import LanguageProvider from 'containers/LanguageProvider';
 // Load the favicon and the manifest.json file
 /* eslint-disable import/no-unresolved, import/extensions */
 import '!file-loader?name=[name].[ext]!./favicon.ico';
+import '!file-loader?name=[name].[ext]!./images/icon-120x120.png';
+import '!file-loader?name=[name].[ext]!./images/icon-152x152.png';
+import '!file-loader?name=[name].[ext]!./images/icon-167x167.png';
+import '!file-loader?name=[name].[ext]!./images/icon-180x180.png';
 import '!file-loader?name=[name].[ext]!./manifest.json';
 /* eslint-enable import/no-unresolved, import/extensions */
 
