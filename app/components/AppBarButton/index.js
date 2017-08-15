@@ -7,7 +7,7 @@
 import { IconButton } from 'material-ui';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Link } from 'react-router';
+import Link from 'react-router/lib/Link';
 import styled from 'styled-components';
 
 const StyledIconButton = styled(IconButton)`
