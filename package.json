@@ -16,7 +16,7 @@
     "npmcheckversion": "node ./internals/scripts/npmcheckversion.js",
     "postinstall": "yarn run build:dll",
     "prebuild": "yarn run build:clean",
-    "build": "NODE_ENV=production webpack --config internals/webpack/webpack.prod.babel.js --color -p --progress",
+    "build": "NODE_ENV=production webpack --config internals/webpack/webpack.prod.babel.js --color -p --progress --hide-modules",
     "build:clean": "yarn run test:clean && rimraf ./build",
     "heroku-postbuild": "yarn run build",
     "build:dll": "node ./internals/scripts/dependencies.js",
