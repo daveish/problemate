@@ -19,7 +19,6 @@ export default function createRoutes(store) {
   return [
     {
       path: '/',
-      name: 'home',
       getComponent(nextState, cb) {
         import('containers/HomePage')
           .then(loadModule(cb))
@@ -27,7 +26,6 @@ export default function createRoutes(store) {
       },
     }, {
       path: '/favorites',
-      name: 'favorites',
       getComponent(location, cb) {
         import('containers/FavoritesPage')
           .then(loadModule(cb))
@@ -35,7 +33,6 @@ export default function createRoutes(store) {
       },
     }, {
       path: '/search',
-      name: 'search',
       getComponent(location, cb) {
         import('containers/SearchPage')
           .then(loadModule(cb))
@@ -43,7 +40,6 @@ export default function createRoutes(store) {
       },
     }, {
       path: '/settings',
-      name: 'settingsPage',
       getComponent(location, cb) {
         import('containers/SettingsPage')
           .then(loadModule(cb))
@@ -51,7 +47,6 @@ export default function createRoutes(store) {
       },
     }, {
       path: '*',
-      name: 'notfound',
       getComponent(nextState, cb) {
         import('containers/NotFoundPage')
           .then(loadModule(cb))
