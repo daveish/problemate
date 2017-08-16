@@ -11,12 +11,18 @@
  * the linting exception.
  */
 
-import PropTypes from 'prop-types';
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import styled, { ThemeProvider } from 'styled-components';
+
 import AppBar from '../../components/AppBar/index';
 import theme from '../../styles/theme';
 import AppDrawer from '../AppDrawer/index';
+import FavoritesPage from '../FavoritesPage/Loadable';
+import HomePage from '../HomePage/Loadable';
+import NotFoundPage from '../NotFoundPage/Loadable';
+import SearchPage from '../SearchPage/Loadable';
+import SettingsPage from '../SettingsPage/Loadable';
 
 const AppWrapper = styled.div`
   height: 100%;
@@ -29,7 +35,7 @@ const StyledMain = styled.main`
 
 const mainHand = 'right';
 
-class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+class App extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
       <ThemeProvider theme={theme}>
@@ -37,16 +43,18 @@ class App extends React.PureComponent { // eslint-disable-line react/prefer-stat
           <AppBar mainHand={mainHand} />
           <AppDrawer mainHand={mainHand} />
           <StyledMain>
-            {React.Children.toArray(this.props.children)}
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+              <Route path="/favorites" component={FavoritesPage} />
+              <Route path="/search" component={SearchPage} />
+              <Route path="/settings" component={SettingsPage} />
+              <Route path="" component={NotFoundPage} />
+            </Switch>
           </StyledMain>
         </AppWrapper>
       </ThemeProvider>
     );
   }
 }
-
-App.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 export default App;
