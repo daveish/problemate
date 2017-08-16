@@ -12,7 +12,7 @@
     "analyze:clean": "rimraf stats.json && yarn run build:clean",
     "preanalyze": "yarn run analyze:clean",
     "analyze": "node ./internals/scripts/analyze.js",
-    "extract-intl": "babel-node --presets latest,stage-0 -- ./internals/scripts/extract-intl.js",
+    "extract-intl": "babel-node --presets env,stage-0 -- ./internals/scripts/extract-intl.js",
     "npmcheckversion": "node ./internals/scripts/npmcheckversion.js",
     "postinstall": "yarn run build:dll",
     "prebuild": "yarn run build:clean",
