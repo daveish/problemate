@@ -12,7 +12,7 @@
  */
 
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import styled, { ThemeProvider } from 'styled-components';
 
 import AppBar from '../../components/AppBar/index';
@@ -35,7 +35,7 @@ const StyledMain = styled.main`
 
 const mainHand = 'right';
 
-class App extends React.Component { // eslint-disable-line react/prefer-stateless-function
+class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
       <ThemeProvider theme={theme}>
@@ -57,4 +57,4 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
   }
 }
 
-export default App;
+export default withRouter(App);
