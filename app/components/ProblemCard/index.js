@@ -14,10 +14,8 @@ const StyledCard = styled(Card)`
 `;
 
 const StyledCardMedia = styled(CardMedia)`
-  img {
-    width: 100%;
-    background-color: #bcbcbc;
-  }
+  height: 100px;
+  background-color: #bcbcbc;
 `;
 
 const StyledCardSubtitle = styled.ul`
@@ -35,17 +33,16 @@ const Bullet = styled.span`
   margin: 0 0.25rem;
 `;
 
+const StyledAvatar = styled(Avatar)`
+  background-color: #bcbcbc;
+`;
+
 class ProblemCard extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     const bullet = <Bullet>•</Bullet>;
     return (
       <StyledCard>
-        <StyledCardMedia>
-          <img
-            src={this.props.image}
-            alt={this.props.imageAlternative}
-          />
-        </StyledCardMedia>
+        <StyledCardMedia image={this.props.image} title={this.props.imageAlternative} />
         <CardHeader
           title={<Typography>{this.props.title}</Typography>}
           subheader={
@@ -60,7 +57,7 @@ class ProblemCard extends React.PureComponent { // eslint-disable-line react/pre
             </StyledCardSubtitle>
           }
           avatar={
-            <Avatar src={this.props.avatar} />
+            <StyledAvatar src={this.props.avatar} />
           }
         />
       </StyledCard>
