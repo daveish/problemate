@@ -45,9 +45,9 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
           <StyledMain>
             <Switch>
               <Route exact path="/" component={HomePage} />
-              <Route path="/favorites" component={FavoritesPage} />
-              <Route path="/search" component={SearchPage} />
-              <Route path="/settings" component={SettingsPage} />
+              <Route exact path="/favorites" component={FavoritesPage} />
+              <Route exact path="/search" component={SearchPage} />
+              <Route exact path="/settings" component={SettingsPage} />
               <Route path="" component={NotFoundPage} />
             </Switch>
           </StyledMain>
