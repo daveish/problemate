@@ -4,7 +4,9 @@
  *
  */
 
-import { Avatar, Card, CardHeader, CardMedia, Typography } from 'material-ui';
+import Avatar from 'material-ui/Avatar';
+import Card, { CardHeader, CardMedia } from 'material-ui/Card';
+import Typography from 'material-ui/Typography';
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';

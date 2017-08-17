@@ -4,7 +4,7 @@
  *
  */
 
-import { IconButton } from 'material-ui';
+import IconButton from 'material-ui/IconButton';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';

@@ -4,14 +4,15 @@
  *
  */
 
-import { Drawer, List, Toolbar } from 'material-ui';
+import Drawer from 'material-ui/Drawer';
+import List, { ListItem } from 'material-ui/List';
+import Toolbar from 'material-ui/Toolbar';
 import PropTypes from 'prop-types';
 import React from 'react';
 import FaCog from 'react-icons/lib/fa/cog';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import styled from 'styled-components';
-import { ListItem } from '../../../node_modules/material-ui/List/index';
 import AppBarButton from '../../components/AppBarButton/index';
 import ContainerLeft from '../../components/ContainerLeft/index';
 import ContainerRight from '../../components/ContainerRight/index';
