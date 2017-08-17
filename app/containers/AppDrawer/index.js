@@ -23,8 +23,8 @@ const StyledContainer = styled.div`
   width: 16rem;
   display: flex;
   flex-direction: column-reverse;
-  height: 100%;
   overflow-y: auto;
+  margin-top: auto;
 `;
 
 const AppDrawerList = styled(List)`
