@@ -167,6 +167,7 @@
       "ip",
       "minimist",
       "sanitize.css",
+      "typeface-roboto",
       "react-icons"
     ],
     "include": [
@@ -235,6 +236,7 @@
     "reselect": "^3.0.0",
     "sanitize.css": "^5.0.0",
     "styled-components": "^2.1.2",
+    "typeface-roboto": "^0.0.35",
     "warning": "^3.0.0",
     "whatwg-fetch": "^2.0.3"
   },

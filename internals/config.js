@@ -24,6 +24,7 @@ const Problemate = {
         'ip',
         'minimist',
         'sanitize.css',
+        'typeface-roboto',
         'react-icons',
       ],
 
