@@ -14,8 +14,13 @@ const StyledCard = styled(Card)`
 `;
 
 const StyledCardMedia = styled(CardMedia)`
-  height: 100px;
   background-color: #bcbcbc;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 `;
 
 const StyledCardSubtitle = styled.ul`
@@ -37,12 +42,19 @@ const StyledAvatar = styled(Avatar)`
   background-color: #bcbcbc;
 `;
 
+const CardMediaWrapper = styled.div`
+  position: relative;
+  padding-bottom: 40%;
+`;
+
 class ProblemCard extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     const bullet = <Bullet>•</Bullet>;
     return (
       <StyledCard>
-        <StyledCardMedia image={this.props.image} title={this.props.imageAlternative} />
+        <CardMediaWrapper>
+          <StyledCardMedia image={this.props.image} title={this.props.imageAlternative} />
+        </CardMediaWrapper>
         <CardHeader
           title={<Typography>{this.props.title}</Typography>}
           subheader={
