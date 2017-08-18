@@ -12,6 +12,8 @@ const ngrok = (isDev && process.env.ENABLE_TUNNEL) || argv.tunnel ? require('ngr
 const resolve = require('path').resolve;
 const app = express();
 
+app.use(enforce.HTTPS({ trustProtoHeader: true }));
+
 // If you need a backend, e.g. an API, add your custom backend-specific middleware here
 // app.use('/api', myApi);
 
@@ -28,8 +30,6 @@ const prettyHost = customHost || 'localhost';
 
 // Start your app.
 app.listen(port, host, (err) => {
-  app.use(enforce.HTTPS({ trustProtoHeader: true }));
-
   if (err) {
     return logger.error(err.message);
   }
