@@ -1,6 +1,7 @@
 /* eslint consistent-return:0 */
 
 const express = require('express');
+const enforce = require('express-sslify');
 const logger = require('./logger');
 
 const argv = require('./argv');
@@ -27,6 +28,8 @@ const prettyHost = customHost || 'localhost';
 
 // Start your app.
 app.listen(port, host, (err) => {
+  app.use(enforce.HTTPS());
+
   if (err) {
     return logger.error(err.message);
   }
