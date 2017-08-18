@@ -28,7 +28,7 @@ const prettyHost = customHost || 'localhost';
 
 // Start your app.
 app.listen(port, host, (err) => {
-  app.use(enforce.HTTPS());
+  app.use(enforce.HTTPS({ trustProtoHeader: true }));
 
   if (err) {
     return logger.error(err.message);
