@@ -7,7 +7,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
-import AppBarButton from '../../components/AppBarButton/index';
+import AppBarButton from '../../components/AppBarButton';
 import { toggleAppDrawer } from './actions';
 
 class AppDrawerToggle extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function

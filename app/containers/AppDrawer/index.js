@@ -4,37 +4,37 @@
  *
  */
 
-import Drawer from 'material-ui/Drawer';
-import List, { ListItem } from 'material-ui/List';
-import Toolbar from 'material-ui/Toolbar';
+import Drawer from 'material-ui/Drawer/Drawer';
+import List from 'material-ui/List/List';
+import ListItem from 'material-ui/List/ListItem';
+import Paper from 'material-ui/Paper/Paper';
 import PropTypes from 'prop-types';
 import React from 'react';
 import FaCog from 'react-icons/lib/fa/cog';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import styled from 'styled-components';
-import AppBarButton from '../../components/AppBarButton/index';
-import ContainerLeft from '../../components/ContainerLeft/index';
-import ContainerRight from '../../components/ContainerRight/index';
+import AppBarButton from '../../components/AppBarButton';
+import ContainerLeft from '../../components/ContainerLeft';
+import ContainerRight from '../../components/ContainerRight';
+import StyledToolbar from '../../components/StyledToolbar';
 import theme from '../../styles/theme';
 import { toggleAppDrawer } from '../AppDrawerToggle/actions';
 import { selectAppDrawerOpen } from '../AppDrawerToggle/selectors';
 
-const StyledContainer = styled.div`
-  width: 16rem;
-  display: flex;
-  flex-direction: column-reverse;
-  overflow-y: auto;
-  margin-top: auto;
+const StyledDrawer = styled(Drawer)`
+  div[class*=MuiDrawer-paper] {
+    width: 16rem;
+  }
 `;
 
-const AppDrawerList = styled(List)`
-  flex-grow: 0 !important;
+const StyledList = styled(List)`
+  margin-top: auto;
 `;
 
 const menuItems = [];
 
-for (let i = 1; i <= 3; i += 1) {
+for (let i = 1; i <= 30; i += 1) {
   menuItems.push({
     id: i,
     text: `Menu Item ${i}`,
@@ -42,16 +42,36 @@ for (let i = 1; i <= 3; i += 1) {
 }
 
 class AppDrawer extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+  componentDidUpdate() {
+    if (this.props.open) {
+      this.scrollToBottom();
+    }
+  }
+
+  scrollToBottom = () => {
+    this.containerNode.scrollTop = this.containerNode.scrollHeight;
+  };
+
   render() {
     return (
-      <Drawer
+      <StyledDrawer
         anchor={this.props.mainHand}
         open={this.props.open}
         docked={false}
         onRequestClose={this.props.onAppDrawerToggle}
       >
-        <StyledContainer>
-          <Toolbar>
+        <StyledList
+          rootRef={(node) => {
+            this.containerNode = node;
+          }}
+        >
+          {menuItems.map(
+            (item) => <ListItem key={item.id}>{item.text}</ListItem>,
+          )}
+        </StyledList>
+
+        <Paper elevation={5}>
+          <StyledToolbar>
             <ContainerLeft>
               {null}
             </ContainerLeft>
@@ -59,18 +79,13 @@ class AppDrawer extends React.PureComponent { // eslint-disable-line react/prefe
               <AppBarButton
                 to="/settings"
                 icon={
-                  <FaCog size="100%" color={theme.searchIconColor} alt="Search" />
+                  <FaCog color={theme.searchIconColor} alt="Search" />
                 }
               />
             </ContainerRight>
-          </Toolbar>
-          <AppDrawerList>
-            {menuItems.map(
-              (item) => <ListItem key={item.id}>{item.text}</ListItem>,
-            )}
-          </AppDrawerList>
-        </StyledContainer>
-      </Drawer>
+          </StyledToolbar>
+        </Paper>
+      </StyledDrawer>
     );
   }
 }

@@ -4,6 +4,7 @@
  *
  */
 
+import AppBar from 'material-ui/AppBar/AppBar';
 import PropTypes from 'prop-types';
 import React from 'react';
 import FaBars from 'react-icons/lib/fa/bars';
@@ -11,15 +12,16 @@ import FaHeart from 'react-icons/lib/fa/heart';
 import FaHome from 'react-icons/lib/fa/home';
 import FaSearch from 'react-icons/lib/fa/search';
 import styled from 'styled-components';
-import AppDrawerToggle from '../../containers/AppDrawerToggle/index';
+import AppDrawerToggle from '../../containers/AppDrawerToggle';
 import theme from '../../styles/theme';
-import AppBarButton from '../AppBarButton/index';
-import AppBarWrapper from '../AppBarWrapper/index';
-import ContainerLeft from '../ContainerLeft/index';
-import ContainerRight from '../ContainerRight/index';
+import AppBarButton from '../AppBarButton';
+import ContainerLeft from '../ContainerLeft';
+import ContainerRight from '../ContainerRight';
+import StyledToolbar from '../StyledToolbar';
 
-const StyledNav = styled.nav`
-  display: flex;
+const StyledAppBar = styled(AppBar)`
+  bottom: 0;
+  top: auto !important;
 `;
 
 const mainItems = [
@@ -27,7 +29,6 @@ const mainItems = [
     key="Search"
     icon={
       <FaSearch
-        size="100%"
         color={theme.searchIconColor}
         alt="Search"
       />
@@ -38,7 +39,6 @@ const mainItems = [
     key="Favorize"
     icon={
       <FaHeart
-        size="100%"
         color={theme.heartIconColor}
         alt="Favorize"
       />
@@ -49,7 +49,6 @@ const mainItems = [
     key="Navigation"
     icon={
       <FaBars
-        size="100%"
         color={theme.button}
         alt="Navigate"
       />
@@ -62,7 +61,6 @@ const sideItems = [
     key="Home"
     icon={
       <FaHome
-        size="100%"
         color={theme.button}
         alt="Go to homepage"
       />
@@ -74,7 +72,7 @@ const sideItems = [
 const mainItemsReversed = mainItems.slice().reverse();
 const sideItemsReversed = sideItems.slice().reverse();
 
-class AppBar extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+class BottomAppBar extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   getMainItems = () => (
     mainItems
   );
@@ -93,11 +91,8 @@ class AppBar extends React.PureComponent { // eslint-disable-line react/prefer-s
 
   render() {
     return (
-      <AppBarWrapper
-        elevation={5}
-        square
-      >
-        <StyledNav>
+      <StyledAppBar color="default">
+        <StyledToolbar>
           <ContainerLeft>
             {
               this.props.mainHand === 'right'
@@ -113,14 +108,14 @@ class AppBar extends React.PureComponent { // eslint-disable-line react/prefer-s
                 : this.getSideItemsReversed()
             }
           </ContainerRight>
-        </StyledNav>
-      </AppBarWrapper>
+        </StyledToolbar>
+      </StyledAppBar>
     );
   }
 }
 
-AppBar.propTypes = {
+BottomAppBar.propTypes = {
   mainHand: PropTypes.string.isRequired,
 };
 
-export default AppBar;
+export default BottomAppBar;

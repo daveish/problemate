@@ -4,25 +4,15 @@
  *
  */
 
-import IconButton from 'material-ui/IconButton';
+import IconButton from 'material-ui/IconButton/IconButton';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-
-const StyledIconButton = styled(IconButton)`
-  height: 3.5rem !important;
-  width: 3.5rem !important;
-
-  svg {
-    padding: 1rem;
-  }
-`;
 
 class AppBarButton extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <StyledIconButton
+      <IconButton
         {
           ...this.props.to
             ? { component: Link }
@@ -31,7 +21,7 @@ class AppBarButton extends React.PureComponent { // eslint-disable-line react/pr
         to={this.props.to}
       >
         {this.props.icon}
-      </StyledIconButton>
+      </IconButton>
     );
   }
 }

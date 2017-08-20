@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import ProblemCard from '../ProblemCard/index';
+import ProblemCard from '../ProblemCard';
 import CardImage from './300x100.jpg';
 import AvatarImage from './40x40.jpg';
 

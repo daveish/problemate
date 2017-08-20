@@ -4,11 +4,11 @@
  *
  */
 
-import Avatar from 'material-ui/Avatar';
+import Avatar from 'material-ui/Avatar/Avatar';
 import Card from 'material-ui/Card/Card';
 import CardHeader from 'material-ui/Card/CardHeader';
 import CardMedia from 'material-ui/Card/CardMedia';
-import Typography from 'material-ui/Typography';
+import Typography from 'material-ui/Typography/Typography';
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';

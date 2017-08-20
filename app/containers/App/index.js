@@ -15,9 +15,9 @@ import React from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import styled, { ThemeProvider } from 'styled-components';
 
-import AppBar from '../../components/AppBar/index';
+import BottomAppBar from '../../components/BottomAppBar';
 import theme from '../../styles/theme';
-import AppDrawer from '../AppDrawer/index';
+import AppDrawer from '../AppDrawer';
 import FavoritesPage from '../FavoritesPage/Loadable';
 import HomePage from '../HomePage/Loadable';
 import NotFoundPage from '../NotFoundPage/Loadable';
@@ -40,7 +40,7 @@ class App extends React.PureComponent { // eslint-disable-line react/prefer-stat
     return (
       <ThemeProvider theme={theme}>
         <AppWrapper>
-          <AppBar mainHand={mainHand} />
+          <BottomAppBar mainHand={mainHand} />
           <AppDrawer mainHand={mainHand} />
           <StyledMain>
             <Switch>
