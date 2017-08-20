@@ -4,8 +4,8 @@
  *
  */
 
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { connect } from 'react-redux';
 import AppBarButton from '../../components/AppBarButton/index';
 import { toggleAppDrawer } from './actions';
@@ -13,10 +13,7 @@ import { toggleAppDrawer } from './actions';
 class AppDrawerToggle extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <AppBarButton
-        icon={this.props.icon}
-        onClick={this.props.onAppDrawerToggle}
-      />
+      <AppBarButton icon={this.props.icon} onClick={this.props.onAppDrawerToggle} />
     );
   }
 }

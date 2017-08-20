@@ -4,10 +4,10 @@
  *
  */
 
-import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import { connect } from 'react-redux';
 import messages from './messages';
 
 export class SearchPage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -23,7 +23,6 @@ export class SearchPage extends React.PureComponent { // eslint-disable-line rea
 SearchPage.propTypes = {
   dispatch: PropTypes.func.isRequired,
 };
-
 
 function mapDispatchToProps(dispatch) {
   return {
