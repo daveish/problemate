@@ -54,6 +54,7 @@ const CardMediaWrapper = styled.div`
 class ProblemCard extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     const bullet = <Bullet>•</Bullet>;
+
     return (
       <StyledCard>
         <CardMediaWrapper>

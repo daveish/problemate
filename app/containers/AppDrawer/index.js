@@ -36,7 +36,7 @@ const StyledContainer = styled.div`
 
 const menuItems = [];
 
-for (let i = 5; i >= 1; i -= 1) {
+for (let i = 1; i <= 30; i += 1) {
   menuItems.push({
     id: i,
     text: `Menu Item ${i}`,
@@ -49,6 +49,10 @@ class AppDrawer extends React.PureComponent { // eslint-disable-line react/prefe
       this.scrollToBottom();
     }
   }
+
+  getMenuItems = () => menuItems.map(
+    (item) => <ListItem key={item.id}>{item.text}</ListItem>,
+  ).slice().reverse();
 
   scrollToBottom = () => {
     this.containerNode.scrollTop = this.containerNode.scrollHeight;
@@ -68,13 +72,11 @@ class AppDrawer extends React.PureComponent { // eslint-disable-line react/prefe
           }}
         >
           <List>
-            {menuItems.reverse().map(
-              (item) => <ListItem key={item.id}>{item.text}</ListItem>,
-            )}
+            {this.getMenuItems()}
           </List>
         </StyledContainer>
 
-        <Paper elevation={5}>
+        <Paper elevation={6}>
           <StyledToolbar>
             <ContainerLeft>
               {null}

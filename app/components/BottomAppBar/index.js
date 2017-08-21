@@ -5,6 +5,7 @@
  */
 
 import AppBar from 'material-ui/AppBar/AppBar';
+import Paper from 'material-ui/Paper/Paper';
 import PropTypes from 'prop-types';
 import React from 'react';
 import FaBars from 'react-icons/lib/fa/bars';
@@ -28,30 +29,21 @@ const mainItems = [
   <AppBarButton
     key="Search"
     icon={
-      <FaSearch
-        color={theme.searchIconColor}
-        alt="Search"
-      />
+      <FaSearch color={theme.searchIconColor} alt="Search" />
     }
     to="/search"
   />,
   <AppBarButton
     key="Favorize"
     icon={
-      <FaHeart
-        color={theme.heartIconColor}
-        alt="Favorize"
-      />
+      <FaHeart color={theme.heartIconColor} alt="Favorize" />
     }
     to="/favorites"
   />,
   <AppDrawerToggle
     key="Navigation"
     icon={
-      <FaBars
-        color={theme.button}
-        alt="Navigate"
-      />
+      <FaBars color={theme.button} alt="Navigate" />
     }
   />,
 ];
@@ -60,10 +52,7 @@ const sideItems = [
   <AppBarButton
     key="Home"
     icon={
-      <FaHome
-        color={theme.button}
-        alt="Go to homepage"
-      />
+      <FaHome color={theme.button} alt="Go to homepage" />
     }
     to="/"
   />,
@@ -92,23 +81,25 @@ class BottomAppBar extends React.PureComponent { // eslint-disable-line react/pr
   render() {
     return (
       <StyledAppBar color="default">
-        <StyledToolbar>
-          <ContainerLeft>
-            {
-              this.props.mainHand === 'right'
-                ? this.getSideItems()
-                : this.getMainItemsReversed()
-            }
-          </ContainerLeft>
+        <Paper square elevation={6}>
+          <StyledToolbar>
+            <ContainerLeft>
+              {
+                this.props.mainHand === 'right'
+                  ? this.getSideItems()
+                  : this.getMainItemsReversed()
+              }
+            </ContainerLeft>
 
-          <ContainerRight>
-            {
-              this.props.mainHand === 'right'
-                ? this.getMainItems()
-                : this.getSideItemsReversed()
-            }
-          </ContainerRight>
-        </StyledToolbar>
+            <ContainerRight>
+              {
+                this.props.mainHand === 'right'
+                  ? this.getMainItems()
+                  : this.getSideItemsReversed()
+              }
+            </ContainerRight>
+          </StyledToolbar>
+        </Paper>
       </StyledAppBar>
     );
   }
