@@ -23,7 +23,7 @@ import { toggleAppDrawer } from '../AppDrawerToggle/actions';
 import { selectAppDrawerOpen } from '../AppDrawerToggle/selectors';
 
 const StyledDrawer = styled(Drawer)`
-  div:last-child {
+  & > div:last-child {
     width: 16rem;
   }
 `;
