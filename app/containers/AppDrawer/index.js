@@ -25,6 +25,7 @@ import { selectAppDrawerOpen } from '../AppDrawerToggle/selectors';
 const StyledDrawer = styled(Drawer)`
   & > div:last-child {
     width: 16rem;
+    height: 100%;
   }
 `;
 
