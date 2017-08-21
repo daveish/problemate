@@ -23,18 +23,19 @@ import { toggleAppDrawer } from '../AppDrawerToggle/actions';
 import { selectAppDrawerOpen } from '../AppDrawerToggle/selectors';
 
 const StyledDrawer = styled(Drawer)`
-  div[class*=MuiDrawer-paper] {
+  div:last-child {
     width: 16rem;
   }
 `;
 
-const StyledList = styled(List)`
+const StyledContainer = styled.div`
   margin-top: auto;
+  overflow-y: auto;
 `;
 
 const menuItems = [];
 
-for (let i = 1; i <= 30; i += 1) {
+for (let i = 5; i >= 1; i -= 1) {
   menuItems.push({
     id: i,
     text: `Menu Item ${i}`,
@@ -60,15 +61,17 @@ class AppDrawer extends React.PureComponent { // eslint-disable-line react/prefe
         docked={false}
         onRequestClose={this.props.onAppDrawerToggle}
       >
-        <StyledList
-          rootRef={(node) => {
+        <StyledContainer
+          innerRef={(node) => {
             this.containerNode = node;
           }}
         >
-          {menuItems.map(
-            (item) => <ListItem key={item.id}>{item.text}</ListItem>,
-          )}
-        </StyledList>
+          <List>
+            {menuItems.reverse().map(
+              (item) => <ListItem key={item.id}>{item.text}</ListItem>,
+            )}
+          </List>
+        </StyledContainer>
 
         <Paper elevation={5}>
           <StyledToolbar>
