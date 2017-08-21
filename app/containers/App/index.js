@@ -41,7 +41,7 @@ class App extends React.PureComponent { // eslint-disable-line react/prefer-stat
               <Route exact path="/favorites" component={FavoritesPage} />
               <Route exact path="/search" component={SearchPage} />
               <Route exact path="/settings" component={SettingsPage} />
-              <Route path="" component={NotFoundPage} />
+              <Route component={NotFoundPage} />
             </Switch>
           </StyledMain>
         </AppWrapper>
