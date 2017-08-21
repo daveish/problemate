@@ -85,7 +85,7 @@ class AppDrawer extends React.PureComponent { // eslint-disable-line react/prefe
               <AppBarButton
                 to="/settings"
                 icon={
-                  <FaCog color={theme.searchIconColor} alt="Search" />
+                  <FaCog color={theme.button} alt="Search" />
                 }
               />
             </ContainerRight>
