@@ -16,7 +16,7 @@
     "npmcheckversion": "node ./internals/scripts/npmcheckversion.js",
     "postinstall": "yarn run build:dll",
     "prebuild": "yarn run build:clean",
-    "build": "NODE_ENV=production webpack --config internals/webpack/webpack.prod.babel.js --color -p --progress --hide-modules",
+    "build": "NODE_ENV=production webpack --config internals/webpack/webpack.prod.babel.js --color -p --progress --hide-modules --display-optimization-bailout",
     "build:clean": "rimraf ./build",
     "heroku-postbuild": "yarn run build",
     "build:dll": "node ./internals/scripts/dependencies.js",
@@ -242,6 +242,7 @@
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
+    "add-asset-html-webpack-plugin": "2.0.1",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^7.2.3",
@@ -257,7 +258,6 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "cheerio": "^0.22.0",
     "circular-dependency-plugin": "^4.2.0",
     "coveralls": "^2.13.1",
     "css-loader": "^0.28.5",
