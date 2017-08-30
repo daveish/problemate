@@ -57,8 +57,6 @@ const robotoObserver = new FontFaceObserver('Roboto', {});
 // When Roboto is loaded, add a font-family using Roboto to the body
 robotoObserver.load().then(() => {
   document.body.classList.add('fontLoaded');
-}, () => {
-  document.body.classList.remove('fontLoaded');
 });
 
 // Create redux store with history
