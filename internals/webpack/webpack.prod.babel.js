@@ -2,6 +2,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const InlineChunkManifestHtmlWebpackPlugin = require('inline-chunk-manifest-html-webpack-plugin');
 const OfflinePlugin = require('offline-plugin');
 
 module.exports = require('./webpack.base.babel')({
@@ -23,8 +24,6 @@ module.exports = require('./webpack.base.babel')({
       minChunks: ({ resource }) => /node_modules/.test(resource),
     }),
 
-    new webpack.optimize.CommonsChunkPlugin('runtime'),
-
     // Minify and optimize the index.html
     new HtmlWebpackPlugin({
       template: 'app/index.html',
@@ -42,6 +41,8 @@ module.exports = require('./webpack.base.babel')({
       },
       inject: true,
     }),
+
+    new InlineChunkManifestHtmlWebpackPlugin(),
 
     // Put it in the end to capture all the HtmlWebpackPlugin's
     // assets manipulations and do leak its manipulations to HtmlWebpackPlugin
