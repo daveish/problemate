@@ -32,6 +32,7 @@ const StyledDrawer = styled(Drawer)`
 const StyledContainer = styled.div`
   margin-top: auto;
   overflow-y: auto;
+  width: 16rem;
 `;
 
 const menuItems = [];
@@ -63,7 +64,6 @@ class AppDrawer extends React.PureComponent { // eslint-disable-line react/prefe
       <StyledDrawer
         anchor={this.props.mainHand}
         open={this.props.open}
-        docked={false}
         onRequestClose={this.props.onAppDrawerToggle}
       >
         <StyledContainer
