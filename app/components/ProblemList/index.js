@@ -18,7 +18,7 @@ for (let i = 0; i < 10; i += 1) {
     imageAlternative: '',
     title: 'Device works but does not update',
     author: 'RubyCat',
-    upvotes: 100,
+    viewCount: 100,
     created: 'vor 2 Minuten',
     avatar: AvatarImage,
   });

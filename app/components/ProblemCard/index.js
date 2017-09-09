@@ -13,6 +13,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import Bullet from '../Bullet/index';
 
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -42,18 +43,13 @@ const StyledListItem = styled.li`
   white-space: nowrap;
 `;
 
-const Bullet = styled.span`
-  display: inline-block;
-  margin: 0 0.25rem;
-`;
-
 const StyledAvatar = styled(Avatar)`
   background-color: #bcbcbc;
 `;
 
 const CardMediaWrapper = styled.div`
   position: relative;
-  padding-bottom: 40%;
+  padding-bottom: 12rem;
 `;
 
 class ProblemCard extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -61,7 +57,7 @@ class ProblemCard extends React.PureComponent { // eslint-disable-line react/pre
     const bullet = <Bullet>•</Bullet>;
 
     return (
-      <StyledLink to={`/${this.props.author}/${this.props.id}`}>
+      <StyledLink to={`/user/${this.props.author}/post/${this.props.id}`}>
         <StyledCard>
           <CardMediaWrapper>
             <StyledCardMedia image={this.props.image} title={this.props.imageAlternative} />
@@ -73,7 +69,7 @@ class ProblemCard extends React.PureComponent { // eslint-disable-line react/pre
                 <Typography type="caption">
                   <StyledListItem>{this.props.author}</StyledListItem>
                   {bullet}
-                  <StyledListItem>{this.props.upvotes} Feel you</StyledListItem>
+                  <StyledListItem>{this.props.viewCount} Aufrufe</StyledListItem>
                   {bullet}
                   <StyledListItem>{this.props.created}</StyledListItem>
                 </Typography>
@@ -96,7 +92,7 @@ ProblemCard.propTypes = {
   avatar: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   imageAlternative: PropTypes.string.isRequired,
-  upvotes: PropTypes.number.isRequired,
+  viewCount: PropTypes.number.isRequired,
   created: PropTypes.string.isRequired,
 };
 
