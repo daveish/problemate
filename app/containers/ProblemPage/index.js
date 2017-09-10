@@ -78,10 +78,6 @@ export default class ProblemPage extends React.PureComponent { // eslint-disable
                   <StyledListItem>vor 2 Minuten</StyledListItem>
                 </StyledCardSubtitle>
               </Typography>
-
-              <Typography type="caption">
-                5 Minuten Lesedauer
-              </Typography>
             </PostMetaInformation>
           </PostHeader>
 

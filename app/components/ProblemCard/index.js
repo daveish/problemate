@@ -49,7 +49,7 @@ const StyledAvatar = styled(Avatar)`
 
 const CardMediaWrapper = styled.div`
   position: relative;
-  padding-bottom: 12rem;
+  padding-bottom: 8rem;
 `;
 
 class ProblemCard extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
