@@ -21,6 +21,7 @@ const StyledLink = styled(Link)`
 
 const StyledCard = styled(Card)`
   margin: 0.625rem;
+  overflow: hidden;
 `;
 
 const StyledCardMedia = styled(CardMedia)`
