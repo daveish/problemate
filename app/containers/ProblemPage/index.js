@@ -13,9 +13,11 @@ import CardImage from '../../components/ProblemList/300x100.jpg';
 import AvatarImage from '../../components/ProblemList/40x40.jpg';
 
 const StyledAvatar = styled(Avatar)`
-  background-color: #999999;
-  width: 4rem !important;
-  height: 4rem !important;
+  && {
+    background-color: #999999;
+    width: 4rem;
+    height: 4rem;
+  }
 `;
 
 const PostHeader = styled.div`

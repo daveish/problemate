@@ -21,8 +21,10 @@ import ContainerRight from '../ContainerRight';
 import StyledToolbar from '../StyledToolbar';
 
 const StyledAppBar = styled(AppBar)`
-  bottom: 0;
-  top: auto !important;
+  && {
+    bottom: 0;
+    top: auto;
+  }
 `;
 
 const mainItems = [
