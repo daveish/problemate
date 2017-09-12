@@ -1,6 +1,6 @@
 /**
  *
- * ProblemCard
+ * PostPreview
  *
  */
 
@@ -9,11 +9,11 @@ import Card from 'material-ui/Card/Card';
 import CardHeader from 'material-ui/Card/CardHeader';
 import CardMedia from 'material-ui/Card/CardMedia';
 import Typography from 'material-ui/Typography/Typography';
-import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Bullet from '../Bullet/index';
+import { postProp } from '../Post/propTypes';
 
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -34,7 +34,7 @@ const StyledCardMedia = styled(CardMedia)`
   left: 0;
 `;
 
-const StyledCardSubtitle = styled.ul`
+const StyledList = styled.ul`
   margin: 0;
   padding: 0.25rem 0 0;
 `;
@@ -53,31 +53,34 @@ const CardMediaWrapper = styled.div`
   padding-bottom: 8rem;
 `;
 
-class ProblemCard extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+export default class PostPreview extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     const bullet = <Bullet>•</Bullet>;
 
     return (
-      <StyledLink to={`/user/${this.props.author}/post/${this.props.id}`}>
+      <StyledLink to={`/user/${this.props.post.author}/post/${this.props.post.id}`}>
         <StyledCard>
           <CardMediaWrapper>
-            <StyledCardMedia image={this.props.image} title={this.props.imageAlternative} />
+            <StyledCardMedia
+              image={this.props.post.image}
+              title={this.props.post.imageAlternative}
+            />
           </CardMediaWrapper>
           <CardHeader
-            title={<Typography>{this.props.title}</Typography>}
+            title={<Typography>{this.props.post.title}</Typography>}
             subheader={
-              <StyledCardSubtitle>
-                <Typography type="caption">
-                  <StyledListItem>{this.props.author}</StyledListItem>
+              <Typography type="caption">
+                <StyledList>
+                  <StyledListItem>{this.props.post.author}</StyledListItem>
                   {bullet}
-                  <StyledListItem>{this.props.viewCount} Aufrufe</StyledListItem>
+                  <StyledListItem>{this.props.post.viewCount} Aufrufe</StyledListItem>
                   {bullet}
-                  <StyledListItem>{this.props.created}</StyledListItem>
-                </Typography>
-              </StyledCardSubtitle>
+                  <StyledListItem>{this.props.post.created}</StyledListItem>
+                </StyledList>
+              </Typography>
             }
             avatar={
-              <StyledAvatar src={this.props.avatar} />
+              <StyledAvatar src={this.props.post.avatar} />
             }
           />
         </StyledCard>
@@ -86,15 +89,6 @@ class ProblemCard extends React.PureComponent { // eslint-disable-line react/pre
   }
 }
 
-ProblemCard.propTypes = {
-  id: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
-  avatar: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  imageAlternative: PropTypes.string.isRequired,
-  viewCount: PropTypes.number.isRequired,
-  created: PropTypes.string.isRequired,
+PostPreview.propTypes = {
+  post: postProp.isRequired,
 };
-
-export default ProblemCard;

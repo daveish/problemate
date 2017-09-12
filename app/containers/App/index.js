@@ -9,12 +9,12 @@ import { Route, Switch, withRouter } from 'react-router-dom';
 import styled, { ThemeProvider } from 'styled-components';
 
 import BottomAppBar from '../../components/BottomAppBar';
+import PostPage from '../../containers/PostPage/Loadable';
 import theme from '../../styles/theme';
 import AppDrawer from '../AppDrawer';
 import FavoritesPage from '../FavoritesPage/Loadable';
 import HomePage from '../HomePage/Loadable';
 import NotFoundPage from '../NotFoundPage/Loadable';
-import ProblemPage from '../ProblemPage/Loadable';
 import SearchPage from '../SearchPage/Loadable';
 import SettingsPage from '../SettingsPage/Loadable';
 
@@ -42,7 +42,7 @@ class App extends React.PureComponent { // eslint-disable-line react/prefer-stat
               <Route exact path="/favorites" component={FavoritesPage} />
               <Route exact path="/search" component={SearchPage} />
               <Route exact path="/settings" component={SettingsPage} />
-              <Route path="/user/:user/post/:post" component={ProblemPage} />
+              <Route path="/user/:user/post/:post" component={PostPage} />
               <Route component={NotFoundPage} />
             </Switch>
           </StyledMain>

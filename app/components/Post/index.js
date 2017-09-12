@@ -1,6 +1,6 @@
 /**
  *
- * ProblemPage
+ * Post
  *
  */
 
@@ -8,13 +8,12 @@ import Avatar from 'material-ui/Avatar/Avatar';
 import Typography from 'material-ui/Typography/Typography';
 import React from 'react';
 import styled from 'styled-components';
-import Bullet from '../../components/Bullet/index';
-import CardImage from '../../components/ProblemList/300x100.jpg';
-import AvatarImage from '../../components/ProblemList/40x40.jpg';
+import Bullet from '../Bullet/index';
+import { postProp } from './propTypes';
 
 const StyledAvatar = styled(Avatar)`
   && {
-    background-color: #999999;
+    background-color: #bcbcbc;
     width: 4rem;
     height: 4rem;
   }
@@ -29,7 +28,8 @@ const PostImage = styled.div`
   background-size: cover;
   background-position: center;
   width: 100%;
-  background-image: url("${CardImage}");
+  background-color: #bcbcbc;
+  background-image: url("${(props) => props.src}");
   padding-bottom: 12rem;
 `;
 
@@ -38,7 +38,7 @@ const PostMetaInformation = styled.div`
   flex: 1;
 `;
 
-const StyledCardSubtitle = styled.ul`
+const StyledList = styled.ul`
   margin: 0;
   padding: 0.25rem 0 0;
 `;
@@ -54,31 +54,31 @@ const PostContainer = styled.div`
   padding: 1rem;
 `;
 
-export default class ProblemPage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+export default class Post extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     const bullet = <Bullet>•</Bullet>;
 
     return (
       <div>
-        <PostImage src={CardImage} alt="Alternative Text" />
+        <PostImage src={this.props.post.image} alt={this.props.post.imageAlternative} />
 
         <PostContainer>
           <PostHeader>
-            <StyledAvatar src={AvatarImage} />
+            <StyledAvatar src={this.props.post.avatar} />
 
             <PostMetaInformation>
               <Typography>
-                Perri Cotton
+                {this.props.post.author}
               </Typography>
 
               <Typography type="caption">
-                <StyledCardSubtitle>
-                  <StyledListItem>RubyCat</StyledListItem>
+                <StyledList>
+                  <StyledListItem>{this.props.post.author}</StyledListItem>
                   {bullet}
-                  <StyledListItem>100 Aufrufe</StyledListItem>
+                  <StyledListItem>{this.props.post.viewCount} Aufrufe</StyledListItem>
                   {bullet}
-                  <StyledListItem>vor 2 Minuten</StyledListItem>
-                </StyledCardSubtitle>
+                  <StyledListItem>{this.props.post.created}</StyledListItem>
+                </StyledList>
               </Typography>
             </PostMetaInformation>
           </PostHeader>
@@ -86,7 +86,7 @@ export default class ProblemPage extends React.PureComponent { // eslint-disable
           <article>
             <header>
               <h1>
-                Device works but does not update
+                {this.props.post.title}
               </h1>
             </header>
 
@@ -179,3 +179,7 @@ export default class ProblemPage extends React.PureComponent { // eslint-disable
     );
   }
 }
+
+Post.propTypes = {
+  post: postProp.isRequired,
+};
