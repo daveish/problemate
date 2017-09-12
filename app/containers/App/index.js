@@ -13,7 +13,7 @@ import PostPage from '../../containers/PostPage/Loadable';
 import theme from '../../styles/theme';
 import AppDrawer from '../AppDrawer';
 import FavoritesPage from '../FavoritesPage/Loadable';
-import HomePage from '../HomePage/Loadable';
+import PostsPage from '../PostsPage/Loadable';
 import NotFoundPage from '../NotFoundPage/Loadable';
 import SearchPage from '../SearchPage/Loadable';
 import SettingsPage from '../SettingsPage/Loadable';
@@ -38,7 +38,7 @@ class App extends React.PureComponent { // eslint-disable-line react/prefer-stat
           <AppDrawer mainHand={mainHand} />
           <StyledMain>
             <Switch>
-              <Route exact path="/" component={HomePage} />
+              <Route exact path="/" component={PostsPage} />
               <Route exact path="/favorites" component={FavoritesPage} />
               <Route exact path="/search" component={SearchPage} />
               <Route exact path="/settings" component={SettingsPage} />
