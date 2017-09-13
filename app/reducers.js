@@ -8,6 +8,7 @@ import { LOCATION_CHANGE } from 'react-router-redux';
 
 import languageProviderReducer from './containers/LanguageProvider/reducer';
 import appDrawerToggleReducer from './containers/AppDrawerToggle/reducer';
+import postsReducer from './containers/PostsPage/reducer';
 
 /*
  * routeReducer
@@ -45,6 +46,7 @@ export default function createReducer(injectedReducers) {
     route: routeReducer,
     language: languageProviderReducer,
     appDrawer: appDrawerToggleReducer,
+    posts: postsReducer,
     ...injectedReducers,
   });
 }

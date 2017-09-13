@@ -4,15 +4,15 @@
  *
  */
 
-import { fromJS } from 'immutable';
+import { fromJS, List } from 'immutable';
 import CardImage from '../../components/Posts/300x100.jpg';
 import AvatarImage from '../../components/Posts/40x40.jpg';
 import { DEFAULT_ACTION } from './constants';
 
-const postsPLaceholder = [];
+let postsPlaceholder = List();
 
 for (let i = 0; i < 10; i += 1) {
-  postsPLaceholder.push({
+  postsPlaceholder = postsPlaceholder.push({
     id: i,
     image: CardImage,
     imageAlternative: '',
@@ -25,13 +25,13 @@ for (let i = 0; i < 10; i += 1) {
 }
 
 const initialState = fromJS({
-  items: postsPLaceholder,
+  items: [],
 });
 
 function homePageReducer(state = initialState, action) {
   switch (action.type) {
     case DEFAULT_ACTION:
-      return state;
+      return state.set('items', postsPlaceholder);
     default:
       return state;
   }
