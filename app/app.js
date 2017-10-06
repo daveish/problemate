@@ -13,6 +13,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
+import { render } from 'react-snapshot';
 import FontFaceObserver from 'fontfaceobserver';
 import createHistory from 'history/createBrowserHistory';
 import 'sanitize.css/sanitize.css';
@@ -65,8 +66,8 @@ const history = createHistory();
 const store = configureStore(initialState, history);
 const MOUNT_NODE = document.getElementById('app');
 
-const render = (messages) => {
-  ReactDOM.render(
+const renderWithMessages = (messages) => {
+  render(
     <Provider store={store}>
       <LanguageProvider messages={messages}>
         <ConnectedRouter history={history}>
@@ -85,7 +86,7 @@ if (module.hot) {
   // have to be constants at compile-time
   module.hot.accept(['./i18n', 'containers/App'], () => {
     ReactDOM.unmountComponentAtNode(MOUNT_NODE);
-    render(translationMessages);
+    renderWithMessages(translationMessages);
   });
 }
 
@@ -97,12 +98,12 @@ if (!window.Intl) {
     .then(() => Promise.all([
       import(/* webpackChunkName: "intl-en" */ 'intl/locale-data/jsonp/en.js'),
     ]))
-    .then(() => render(translationMessages))
+    .then(() => renderWithMessages(translationMessages))
     .catch((err) => {
       throw err;
     });
 } else {
-  render(translationMessages);
+  renderWithMessages(translationMessages);
 }
 
 // Install ServiceWorker and AppCache in the end since
