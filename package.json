@@ -288,7 +288,6 @@
     "plop": "^1.8.1",
     "pre-commit": "^1.2.2",
     "react-addons-test-utils": "^15.6.0",
-    "react-snapshot": "^1.2.0",
     "rimraf": "^2.6.1",
     "shelljs": "^0.7.8",
     "style-loader": "^0.19.0",
