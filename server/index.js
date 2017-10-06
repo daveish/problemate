@@ -1,7 +1,7 @@
 /* eslint consistent-return:0 */
 
 const express = require('express');
-const enforce = require('express-sslify');
+// const enforce = require('express-sslify');
 const logger = require('./logger');
 
 const argv = require('./argv');
@@ -13,7 +13,7 @@ const resolve = require('path').resolve;
 const app = express();
 
 if (!isDev) {
-  app.use(enforce.HTTPS({ trustProtoHeader: true }));
+  // app.use(enforce.HTTPS({ trustProtoHeader: true }));
 }
 
 // If you need a backend, e.g. an API, add your custom backend-specific middleware here
