@@ -43,7 +43,12 @@
   "pre-commit": "lint:staged",
   "babel": {
     "presets": [
-      "env",
+      [
+        "env",
+        {
+          "modules": false
+        }
+      ],
       "react",
       "stage-0"
     ],
