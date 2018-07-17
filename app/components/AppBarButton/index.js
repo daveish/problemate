@@ -13,11 +13,9 @@ class AppBarButton extends React.PureComponent { // eslint-disable-line react/pr
   render() {
     return (
       <IconButton
-        {
-          ...this.props.to
-            ? { component: Link }
-            : { onClick: this.props.onClick }
-        }
+        {...this.props.to
+          ? { component: Link }
+          : { onClick: this.props.onClick }}
         to={this.props.to}
       >
         {this.props.icon}
